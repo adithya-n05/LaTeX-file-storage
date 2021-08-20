@@ -1,0 +1,1196 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage[toc, page]{appendix}
+\usepackage{multirow}
+\usepackage{pdflscape}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{color} 
+\usepackage[pdftex]{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linktoc=all,
+	linkcolor=black,
+	citecolor=.
+}
+\usepackage[export]{adjustbox}
+\usepackage{float}
+\restylefloat{table}
+\usepackage{array}
+\usepackage[final]{microtype}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{filecontents}
+\usepackage{multirow}
+\usepackage{callouts}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage[justification=centering]{caption} 
+\usetikzlibrary{intersections}
+\usepackage{fontawesome}
+\usepackage{capt-of}
+\usepackage{setspace}
+\usepackage{tablefootnote}
+\usepackage{subcaption}
+\usepackage[style=mla, backend=biber]{biblatex}
+\addbibresource{MYP.Economics.Living_Standards.11.2.2020.bib}
+\usepackage{caption}
+\captionsetup[figure]{font=footnotesize}
+\captionsetup[table]{font=footnotesize}
+\usepackage{wrapfig}
+\usepackage{scrextend}
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ul}{}
+\deffootnote{0em}{1.6em}{\thefootnotemark.\enskip}
+
+\doublespacing
+
+\title{MYP Economics G2 01 - Living Standards}
+\author{Adithya Narayanan}
+\date{11 February, 2020}
+
+\begin{filecontents*}{NorwayGDPUSD.csv}
+	a, b
+	1970, 3306.22
+	1971, 3736.35
+	1972, 4413.58
+	1973, 5689.59
+	1974, 6811.53
+	1975, 8204.45
+	1976, 8927.20
+	1977, 10266.12
+	1978, 11462.64
+	1979, 13046.54
+	1980, 15772.24
+	1981, 15512.51
+	1982, 15224.89
+	1983, 14927.52
+	1984, 14989.49
+	1985, 15753.55
+	1986, 18883.27
+	1987, 22505.90
+	1988, 24207.28
+	1989, 24281.10
+	1990, 28242.94
+	1991, 28596.93
+	1992, 30523.99
+	1993, 27963.67
+	1994, 29315.84
+	1995, 34875.70
+	1996, 37321.97
+	1997, 36629.03
+	1998, 34788.36
+	1999, 36371.05
+	2000, 38131.46
+	2001, 38542.72
+	2002, 43084.47
+	2003, 50134.89
+	2004, 57603.84
+	2005, 66810.48
+	2006, 74148.32
+	2007, 85139.96
+	2008, 96944.10
+	2009, 79977.70
+	2010, 87693.79
+	2011, 100600.56
+	2012, 101524.14
+	2013, 102913.45
+	2014, 97019.18
+	2015, 74355.52
+	2016, 70460.56
+	2017, 75496.75
+	2018, 81697.25
+\end{filecontents*}
+
+\begin{filecontents*}{NorwayGDPNOK.csv}
+	a, b
+	1970, 23608
+	1971, 26364
+	1972, 29078
+	1973, 32810
+	1974, 37736
+	1975, 42887
+	1976, 48713
+	1977, 54654
+	1978, 60086
+	1979, 66061
+	1980, 77895
+	1981, 89028
+	1982, 98256
+	1983, 108929
+	1984, 122340
+	1985, 135421
+	1986, 139648
+	1987, 151634
+	1988, 157759
+	1989, 167649
+	1990, 176792
+	1991, 185391
+	1992, 189691
+	1993, 198377
+	1994, 206900
+	1995, 220945
+	1996, 240719
+	1997, 259092
+	1998, 262482
+	1999, 283665
+	2000, 335626
+	2001, 346565
+	2002, 343978
+	2003, 354965
+	2004, 388296
+	2005, 430427
+	2006, 475536
+	2007, 499065
+	2008, 546765
+	2009, 502924
+	2010, 530036
+	2011, 563827
+	2012, 590617
+	2013, 604552
+	2014, 611359
+	2015, 599389
+	2016, 591684
+	2017, 624484
+	2018, 664483
+\end{filecontents*}
+
+\begin{filecontents*}{NorwayIN.csv}
+	a,b
+	2019,1.15
+	2018,0.57
+	2017,0.50
+	2016,0.55
+	2015,1.05
+	2014,1.49
+	2013,1.50
+	2012,1.55
+	2011, 2.14
+	2010, 1.92
+\end{filecontents*}
+
+\begin{filecontents*}{NorwayHDIvalues.csv}
+	a, b
+	2015, 0.948
+	2016, 0.951
+	2017, 0.953
+	2018, 0.954
+\end{filecontents*}
+
+\begin{filecontents*}{NigerHDIvalues.csv}
+	a, b
+	2015, 0.360
+	2016, 0.365
+	2017, 0.373
+	2018, 0.377
+\end{filecontents*}
+
+\begin{filecontents*}{NorwaySPIvalues.csv}
+	a, b
+	2015, 89.17
+	2016, 89.33
+	2017, 89.83
+	2018, 90.01
+\end{filecontents*}
+
+\begin{filecontents*}{NigerSPIvalues.csv}
+	a, b
+	2015, 40.37
+	2016, 40.87
+	2017, 40.80
+	2018, 40.87
+\end{filecontents*}
+
+\begin{filecontents*}{NorwayGDPvalues.csv}
+	a, b
+	2015, 74355.51
+	2016, 70460.56
+	2017, 75496.75
+	2018, 81697.25
+\end{filecontents*}
+
+\begin{filecontents*}{NigerGDPvalues.csv}
+	a, b
+	2015, 360.85
+	2016, 362.13
+	2017, 375.87
+	2018, 413.98
+\end{filecontents*}
+
+\begin{document}
+	\begin{titlepage}
+		\maketitle
+
+		\begin{center}
+			\large Research Question: To what degree of accuracy do measures of living standards correlate with real life living standards in EMDCs, such as Norway and ELDCs, such as Niger, and allow for accurate comparisons to be made?
+
+			Word count: 1498
+		\end{center}
+	\end{titlepage}
+	 
+	\newpage
+	\section{Introduction}
+		\vspace*{-4mm}
+		The Standard of Living in an economy describes ``the level of wealth, comfort, material goods, and necessities available to a certain socioeconomic class or a certain geographic area"(\citeauthor{investopediaStandardLiving2019}). The development of an index for the quantitative measurement of living standards remains important, as living standards are direct determinants of well-being and happiness. Indices not only allow economies to compare on an international landscape but also determine best areas of growth to maximize the well-being of a population. As such, ensuring that such indicators are true to life and a viable option for measurement remains crucial, as this determines the reliability of an index. 
+		\vspace*{-6mm}
+	\section{Real GDP per capita}
+		\vspace*{-4mm}
+		The Real GDP per capita is the average output of an economy on a per person basis, while accounting for inflation. Real GDP per capita is calculated using:
+		\begin{equation}
+			Real \ GDP \ per \ Capita \ (Current \ US\$) = \frac{Real \ GDP \ (Current \ US\$)}{Population}
+		\end{equation}
+		Real GDP per capita is the most widely used comparitive indicator of economic development. Due to adjustments for inflation and population growth, the indicator can be utilised for the comparison of living standards and has shown to be a generally viable approximation of living standards. As the Real GDP per capita increases, countries tend to witness an increase in the material standard of living.
+		
+		\newpage
+		\vspace*{-6mm}
+		\subsection{Norway}
+			\vspace*{-5mm}
+			\noindent\rule{15.92cm}{0.4pt}
+			\vspace*{-\baselineskip}
+			\singlespacing
+			\begin{table}[H]
+				\begin{minipage}{\textwidth}
+					\begin{adjustbox}{width=\textwidth,center=\textwidth}
+						\centering
+						\begin{tabular}{|>{\centering\arraybackslash}m{1cm}|>{\centering\arraybackslash}m{3.23cm}|>{\centering\arraybackslash}m{3.23cm}|>{\centering\arraybackslash}m{3.23cm}|>{\centering\arraybackslash}m{3.23cm}|}
+							\hline 
+							\textbf{Year} & \textbf{Real GDP per capita (Current US\$)\footnote{World Bank. “GDP per Capita (Current US\$) - Norway | Data.” Worldbank.Org, 2010, data.worldbank.org/indicator/ NY.GDP.PCAP.CD? locations=NO. Accessed 8 Feb. 2020.}} & \textbf{YoY Real GDP per capita growth rate (\%)\footnote{Macrotrends. “Norway GDP Per Capita 1960-2020.” Macrotrends.Net, 2020, www.macrotrends.net/countries/NOR/norway/gdp-per-capita. Accessed 8 Feb. 2020.}} & \textbf{Population (millions)\footnote{\label{1sttablefoot}Worldometers. “Norway Population (2019).” Worldometers.Info, 2019, www.worldometers.info/world-population/norway-population/. Accessed 8 Feb. 2020.}} & \textbf{Population growth rate (\%)\footref{1sttablefoot}}\\
+							\hline
+							\hline
+							2015 & 74,355.51 & -23.33 & 5.20 & 1.12\\
+							\hline
+							2016 & 70,460.56 & -4.80 & 5.25 & 0.98\\
+							\hline
+							2017 & 75,496.75 & 6.71 & 5.30 & 0.86\\
+							\hline
+							2018 & 81,697.25 & 8.06 & 5.33 & 0.79\\
+							\hline
+						\end{tabular}
+					\end{adjustbox}
+				\end{minipage}
+				\caption{ Real GDP per capita (Current US\$), YoY Real GDP per capita growth rate(\%), Population (millions) and Population growth rate (\%) of Norway from 2015-18}
+			\end{table}
+			\doublespacing
+			\vspace*{-\baselineskip}
+			\noindent\rule{16cm}{0.4pt}
+			The Norwegian economy experienced tremendous drops in their real GDP per capita due to the global oil shock, however, the economy has now recuperated and has maintained sustained growth. 
+			\vspace*{-5mm}
+			\subsubsection{Global oil shock}
+				\vspace*{-4mm}
+				The Norwegian GDP per capita witnessed a severe drop of -23.33\% in 2015(See Tab.1), attributed to increasing exchange rates between NOK and USD, ascribed to decreasing oil prices. As oil constituted 22\%\parencite{ecNorwayTradeEuropean2018} of the Norwegian GDP, compared to the 8\%\parencite{OilEconomy2019} of the US GDP, the oil shock, devalued the NOK. The US profitted from lower costs of production, while Norway was directly impacted, amplifying the relative reduction in Norway's GDP per due to increases in foreign exchange rates. However, in the NOK point of view, Real GDP per capita is at the highest it has ever been since the 1970s(See Fig.1).
+				
+				\begin{figure}[H]
+					\vspace*{-15mm}
+					\hskip -2cm
+					\begin{subfigure}{9.96cm}
+						\begin{tikzpicture}
+							\begin{axis}[
+								minor grid style={dashed},
+								scaled ticks=false,
+								table/col sep=comma,
+								xmin=1970, xmax=2018,
+								ymin=0, ymax=110000,
+								title style={font=\footnotesize, text width=9.5cm, align=center},
+								xlabel style={font=\footnotesize},
+								ylabel style={font=\footnotesize},
+								xticklabel style={font=\scriptsize, rotate=90, /pgf/number format/1000 sep=},
+								yticklabel style={/pgf/number format/fixed, font=\scriptsize},
+								legend pos=north west,
+								title={\textbf{Real GDP per capita (US\$) of Norway from 1970 to 2018}},
+								xlabel={Year},
+								ylabel={Real GDP per capita (US\$)},
+								xtick={1970,1975,1980,1985,1990,1995,2000,2005,2010,2015},
+								minor ytick={10000,30000,50000,70000,90000,110000},
+								ymajorgrids=true,
+								xmajorgrids=true,
+								xminorgrids=true,
+								yminorgrids=true,
+								scale=1.1,
+								]
+		
+								\addplot[cyan, mark=o, mark options={scale=0.5, fill=orange}] table[x=a, y=b] {NorwayGDPUSD.csv};
+							\end{axis}
+						\end{tikzpicture}
+					\caption{World Bank. “GDP per Capita (Current US\$) - Norway | Data.” Worldbank.Org, 2010, data.worldbank.org/indicator/NY.GDP.PCAP.CD? locations=NO. Accessed 8 Feb. 2020.}
+					\end{subfigure}
+					\begin{subfigure}{9.96cm}
+						\begin{tikzpicture}
+							\begin{axis}[
+								minor grid style={dashed},
+								scaled ticks=false,
+								title style={font=\footnotesize, text width=9.5cm, align=center},
+								table/col sep=comma,
+								xlabel style={font=\footnotesize},
+								ylabel style={font=\footnotesize},
+								xticklabel style={font=\scriptsize, rotate=90, /pgf/number format/1000 sep=},
+								yticklabel style={/pgf/number format/fixed, font=\scriptsize},
+								legend pos=north west,
+								xmin=1970, xmax=2018,
+								ymin=0, ymax=680000,
+								title={\textbf{Real GDP per capita (kr) of Norway from 1970 to 2018}},
+								xlabel={Year},
+								ylabel={Real GDP per capita (kr)},
+								xtick={1970,1975,1980,1985,1990,1995,2000,2005,2010,2015},
+								minor ytick={50000,150000,250000,350000,450000,550000,650000},
+								ymajorgrids=true,
+								xmajorgrids=true,
+								xminorgrids=true,
+								yminorgrids=true,
+								scale=1.1,
+								]
+		
+								\addplot[orange, mark=square, mark options={scale=0.5, fill=cyan}] table[x=a, y=b] {NorwayGDPNOK.csv};
+							\end{axis}
+					\end{tikzpicture}
+					\caption{Statistisk sentralbyrå. “09842: GDP and Other Main Aggregates (NOK per Capita) 1970 - 2019-SSB.” SSB, www.ssb.no/en/statbank/ table/09842/tableViewLayout1/. Accessed 8 Feb. 2020.}
+					\end{subfigure}
+					\caption{Comparison of real GDP per capita of Norway in US\$ and Norwegian Krone from 1970 to 2018}
+				\end{figure}
+				\vspace*{-6mm}
+			
+				Government spending increased by approximately 5\%(\citeauthor{tradingeconomicsNorwayGovernmentSpending2018}) over 2015-16. Investment fell by 1/3\parencite{madslienNorwaySeeksDiversify2016}, resulting in the enactment of an expansionary monetary policy involving the reduction of interest rates(See Fig.2) with the short term aim of boosting investment.
+			
+				\begin{figure}[H]
+					\begin{center}
+						\begin{tikzpicture}
+							\begin{axis}[
+								minor grid style={dashed},
+								scaled ticks=false,
+								table/col sep=comma,
+								xmin=2010, xmax=2019,
+								ymin=0, ymax=2.5,
+								title style={font=\footnotesize, text width=9.5cm, align=center},
+								xlabel style={font=\footnotesize},
+								ylabel style={font=\footnotesize},
+								xticklabel style={font=\scriptsize, rotate=90, /pgf/number format/1000 sep=},
+								yticklabel style={/pgf/number format/fixed, font=\scriptsize},
+								legend pos=north west,
+								title={\textbf{Norges Key Policy Interest Rates (\%) from 2010 to 2019}},
+								xlabel={Year},
+								ylabel={Key policy interest rate (\%)},
+								xtick={2010, 2012, 2014, 2016, 2018},
+								minor ytick={0.25, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0, 2.25, 2.5},
+								ymajorgrids=true,
+								xmajorgrids=true,
+								xminorgrids=true,
+								yminorgrids=true,
+								]
+				
+								\addplot[blue, mark=o, mark options={scale=0.5, fill=orange}] table[x=a, y=b] {NorwayIN.csv};
+							\end{axis}
+						\end{tikzpicture}
+					\end{center}
+				\vspace*{-6mm}
+				\caption{Norges Bank. “Interest Rates.” Norges-Bank.No, 2013, www.norges-bank.no/en/topics/Statistics/Interest-rates/. Accessed 8 Feb. 2020.}
+				\end{figure}
+				\vspace*{-6mm}
+				
+				\vspace*{-6mm}
+				\subsection{Niger}
+					\vspace*{-5mm}
+				\noindent\rule{15.92cm}{0.4pt}
+				\vspace*{-\baselineskip}
+				\singlespacing
+				\begin{table}[H]
+					\begin{minipage}{\textwidth}
+						\begin{adjustbox}{width=\textwidth,center=\textwidth}
+							\centering
+							\begin{tabular}{|>{\centering\arraybackslash}m{1cm}|>{\centering\arraybackslash}m{3.23cm}|>{\centering\arraybackslash}m{3.23cm}|>{\centering\arraybackslash}m{3.23cm}|>{\centering\arraybackslash}m{3.23cm}|}
+								\hline 
+								\textbf{Year} & \textbf{Real GDP per capita (Current US\$)\footnote{World Bank. “GDP per Capita (Current US\$) - Niger | Data.” Worldbank.Org, 2010, data.worldbank.org/indicator/NY.GDP.PCAP.CD?locations=NE. Accessed 8 Feb. 2020.}} & \textbf{YoY Real GDP growth rate (\%)\footnote{---. “GDP per Capita Growth (Annual \%) - Niger | Data.” Worldbank.Org, 2010, data.worldbank.org/indicator/NY.GDP.PCAP.KD.ZG?locations=NE. Accessed 8 Feb. 2020.}} & \textbf{Population (millions)\footnote{\label{1sttablefoot}Worldometers. “Niger Population (2019).” Worldometers.Info, 2019, www.worldometers.info/world-population/niger-population/. Accessed 8 Feb. 2020.}} & \textbf{Population growth rate (\%)\footref{1sttablefoot}}\\
+								\hline
+								\hline
+								2015 & 360.85 & 0.365 & 20.00 & 3.96\\
+								\hline
+								2016 & 362.13 & 0.953 & 20.79 & 3.94\\
+								\hline
+								2017 & 375.87 & 0.943 & 21.60 & 3.91\\
+								\hline                          
+								2018 & 413.98 & 2.495 & 22.44 & 3.89\\
+								\hline
+							\end{tabular}
+						\end{adjustbox}
+					\end{minipage}
+
+					\caption{ Real GDP per capita (Current US\$), YoY Real GDP per capita growth rate(\%), Population (millions) and Population growth rate (\%) of Niger from 2015-18}
+				\end{table}
+				\doublespacing
+				\vspace*{-\baselineskip}
+				\noindent\rule{16cm}{0.4pt}
+
+				Niger faced massive reductions in demand for Uranium. Over 2015-18, production changed to subsistence farming. The GDP per capita witnessed sudden growth in 2018 due to increases in exports from US\$1.10 billion to US\$4.14 billion from 2016-18. Prior to 2015, Niger was affected by the global oil shock, and recuperated by 2018. Niger implemented expansionary monetary policies to reduce interest rates, however did not implement a fiscal policy.
+
+\singlespacing
+	\vspace*{-6mm}
+	\section{United Nations Human Development Index (UNHDI)}
+\doublespacing
+		\vspace*{-4mm}
+		The HDI is a composite life indicator utilised by the United Nations Development Programme(UNDP). The statistic is utilised to measure levels of social and economic development and is concerned with 3 main dimensions:
+
+		\vspace*{-3mm}
+		\singlespacing
+		\begin{enumerate}
+			\item Long and Healthy Life - Life Expectancy (LE)
+			\item Knowledge - Expected and mean years of Schooling (EYS and MYS)
+			\item Standard of Living - Gross National Income per Capita (GNIpc)
+		\end{enumerate}
+		\doublespacing
+		\vspace*{-3mm}
+		
+		Each indicator is converted to an index, prior to being combined into a single indicator of human development(See Fig.3). 
+		
+		\begin{figure}[H]
+			\centering
+			
+			\caption{United Nations Development Programme. “Human Development Index (HDI) | Human Development Reports.” Undp.Org, 2000, hdr.undp.org/en/content/human-development-index-hdi. Accessed 8 Feb. 2020.}
+		\end{figure}
+		
+		The following are the equations utilised to create said inidices, before being combined to arrive at the HDI:
+		\singlespacing
+		\begin{equation}
+			Life \ Expectancy \ Index \ (LEI) \ = \ \frac{LE \ - \ 20}{85 \ - \ 20}
+		\end{equation}
+
+		\begin{equation}
+			Mean \ Years \ of \ Schooling \ Index \ (MYSI) \ = \ \frac{MYS}{15}
+		\end{equation}
+
+		\begin{equation}
+			Expected \ Years \ of \ Schooling \ Index \ (EYSI) \ = \ \frac{EYS}{18}
+		\end{equation}
+
+		\begin{equation}
+			Educational \ Index \ (EI) \ = \ \frac{MYSI \ + \ EYSI}{2}
+		\end{equation}
+
+		\begin{equation}
+			Income \ Index \ (II) \ = \ \frac{\ln(GNIpc) \ - \ \ln(100)}{\ln(75000) \ - \ \ln(100)}
+		\end{equation}
+
+		\begin{equation}
+			Human \ Development \ Index \ (HDI) \ = \ \sqrt[3]{LEI \ \times \ EI \ \times \ II}
+		\end{equation}
+		\doublespacing
+		There are 4 main tiers of development:
+
+		\vspace*{-3mm}
+		\singlespacing
+		\begin{enumerate}
+			\item Very high human development (0.800-1.000)
+			\item High human development (0.700-0.790)
+			\item Medium human development (0.550-0.700)
+			\item Low human development ($>$ 0.550)
+		\end{enumerate}
+		\doublespacing
+		\vspace*{-3mm}
+
+		\vspace*{-6mm}
+		\subsection{Norway}
+			\vspace*{-5mm}
+			\noindent\rule{15.92cm}{0.4pt}
+			\vspace*{-\baselineskip}
+		\singlespacing
+		\begin{table}[H]
+			\begin{minipage}{\textwidth}
+				\begin{adjustbox}{width=\textwidth,center=\textwidth}
+					\centering
+					\begin{tabular}{|>{\centering\arraybackslash}m{1cm}|>{\centering\arraybackslash}m{2.58cm}|>{\centering\arraybackslash}m{2.58cm}|>{\centering\arraybackslash}m{2.58cm}|>{\centering\arraybackslash}m{2.58cm}|>{\centering\arraybackslash}m{2.58cm}|}
+						\hline
+						\textbf{Year} & \textbf{Life Expectancy at Birth (Years)\footnote{\label{1sttablefoot}United Nations. “Work for Human Development Norway Introduction.” United Nations Human Development Reports, 2019, hdr.undp.org/sites/all/themes/hdr\_theme/country-notes/NOR.pdf. Accessed 8 Feb. 2020.}} & \textbf{Expected Years of Schooling (Years)\footref{1sttablefoot}} & \textbf{Mean Years of Schooling (Years)\footref{1sttablefoot}} & \textbf{GNI per capita (2011 PPP \$)\footref{1sttablefoot}} & \textbf{HDI score (0-1)\footref{1sttablefoot}} \\ \hline
+						2015          & 81.9                                      & 17.8                                         & 12.5                                     & 66,584                                & 0.948                    \\ \hline
+						2016          & 82.0                                      & 18.0                                         & 12.6                                     & 66,746                                & 0.951                    \\ \hline
+						2017          & 82.1                                      & 18.1                                         & 12.6                                     & 67,529                                & 0.953                    \\ \hline
+						2018          & 82.3                                      & 18.1                                         & 12.6                                     & 68,059                                & 0.954                    \\ \hline
+						\end{tabular}
+				\end{adjustbox}
+			\end{minipage}
+			\vspace*{-1mm}
+		\caption{Components of HDI and HDI score of Norway for 2015-18}
+		\end{table}
+		\doublespacing
+		\vspace*{-\baselineskip}
+		\noindent\rule{15.92cm}{0.4pt}
+		\vspace*{-3mm}
+
+		Norway's score classifies it as having very high human development, with a score greater than 0.800. Norway's score has increased by 0.006 and has improved in all areas, with its GNI per capita having incrased by 1,475 PPP\$, mean years of schooling by 0.1 years, expected years of schooling by 0.3 years and life expectancy by 0.4 years.
+		
+		\subsection{Niger}
+	\vspace*{-5mm}
+	\noindent\rule{15.92cm}{0.4pt}
+	\vspace*{-\baselineskip}
+		\singlespacing
+		\begin{table}[H]
+			\begin{minipage}{\textwidth}
+				\begin{adjustbox}{width=\textwidth,center=\textwidth}
+					\centering
+					\begin{tabular}{|>{\centering\arraybackslash}m{1cm}|>{\centering\arraybackslash}m{2.58cm}|>{\centering\arraybackslash}m{2.58cm}|>{\centering\arraybackslash}m{2.58cm}|>{\centering\arraybackslash}m{2.58cm}|>{\centering\arraybackslash}m{2.58cm}|}
+						\hline
+						\textbf{Year} & \textbf{Life Expectancy at Birth (Years)\footnote{\label{1sttablefoot}United Nations. Human Development Indices and Indicators: 2018 Statistical Update Briefing Note for Countries on the 2018 Statistical Update. 2019, hdr.undp.org/sites/all/themes/hdr\_theme/country-notes/NER.pdf. Accessed 8 Feb. 2020.}} & \textbf{Expected Years of Schooling (Years)\footref{1sttablefoot}} & \textbf{Mean Years of Schooling (Years)\footref{1sttablefoot}} & \textbf{GNI per capita (2011 PPP \$)\footref{1sttablefoot}} & \textbf{HDI score (0-1)\footref{1sttablefoot}} \\ \hline
+						2015          & 60.6                                      & 6.0                                          & 1.8                                      & 884                                   & 0.360                    \\ \hline
+						2016          & 61.1                                      & 6.1                                          & 1.9                                      & 892                                   & 0.365                    \\ \hline
+						2017          & 61.6                                      & 6.5                                          & 2.0                                      & 901                                   & 0.373                    \\ \hline
+						2018          & 62.0                                      & 6.5                                          & 2.0                                      & 912                                   & 0.377                    \\ \hline
+						\end{tabular}
+				\end{adjustbox}
+			\end{minipage}
+			\vspace*{-2mm}
+		\caption{Components of HDI and HDI score for Niger for 2015-18}
+		\end{table}
+		\doublespacing
+		\vspace*{-\baselineskip}
+		\noindent\rule{15.92cm}{0.4pt}
+		\vspace*{-3mm}
+		
+		Niger's score classifies the country as having low human development. However, Niger has witnessed growth in all areas from 2015-18. Niger's HDI score increased by 0.017, GNI per capita by 28 PPP\$, mean years of schooling by 0.2 years, expected years of schooling by 0.5 years and life expectancy by 1.4 years.
+		
+		\vspace*{-7mm}
+	\section{Social Progress Index (SPI)}
+		\vspace*{-4mm}
+			The SPI was developed on the ideas of prominent economists such as Amartya Sen, Douglass North and Joseph Stiglitz. The SPI covers 54 indicators. A specialty of the indicator remains that it ``focuses exclusively on indicators of social outcomes; rather than measuring inputs"(\citeauthor{socialprogressimperativeSOCIALPROGRESSINDEX2013}). The indicator covers 3 main dimensions of human life:
+			
+			\vspace*{-4mm}
+			\singlespacing
+			\begin{enumerate}
+				\item Basic Human Needs
+				\item Foundations of Wellbeing
+				\item Opportunity
+			\end{enumerate}
+			\doublespacing
+			\vspace*{-5mm}
+
+			Based on 4 main compononents, each dimension consists of multiple indicators(See Fig.4).
+
+			\begin{figure}[H]
+				\centering
+				
+				\caption{aasf}
+			\end{figure}
+
+			\vspace*{-6mm}
+		\subsection{Norway}
+		\vspace*{-6mm}
+		\noindent\rule{15.92cm}{0.4pt}
+				\begin{table}[H]
+					\begin{minipage}{\textwidth}
+						\begin{adjustbox}{width=\textwidth,center=\textwidth}
+							\centering
+							\begin{tabular}{>{\centering\arraybackslash}m{3.97cm}|>{\centering\arraybackslash}m{5.95cm}|>{\centering\arraybackslash}m{1.5cm}|>{\centering\arraybackslash}m{1.5cm}|>{\centering\arraybackslash}m{1.5cm}|>{\centering\arraybackslash}m{1.5cm}|}
+								\hline
+								\multicolumn{1}{|c|}{\multirow{2}{3.97cm}{\textbf{Dimensions of the SPI}}}    & \multirow{2}{5.95cm}{\centering\textbf{Score for individual components of SPI (0-100)\footnote{\label{1sttablefoot}Social Progress Imperative. “2019 Social Progress Index.” 2019 Social Progress Index, 2020, www.socialprogress.org/?tab=3\&compare=NOR\&prop=SPI. Accessed 8 Feb. 2020.}}} & \multicolumn{4}{c|}{\textbf{Year}}                \\ \cline{3-6} 
+								\multicolumn{1}{|c|}{}                                                   &                                                                               & {\ul 2015} & {\ul 2016} & {\ul 2017} & {\ul 2018} \\ \hline
+								\multicolumn{1}{|c|}{\multirow{6}{*}{\textbf{Basic Human Needs}}}        & {\ul Nutrition and Basic Medical Care}                                        & 98.48      & 98.51      & 98.59      & 98.58      \\ \cline{2-6} 
+								\multicolumn{1}{|c|}{}                                                   & {\ul Water and Sanitation}                                                    & 99.53      & 99.53      & 99.53      & 99.53      \\ \cline{2-6} 
+								\multicolumn{1}{|c|}{}                                                   & {\ul Shelter}                                                                 & 98.85      & 98.61      & 98.84      & 99.43      \\ \cline{2-6} 
+								\multicolumn{1}{|c|}{}                                                   & {\ul Personal Safety}                                                         & 89.91      & 88.87      & 89.98      & 90.26      \\ \cline{2-6} 
+								\multicolumn{1}{|c|}{}                                                   & \multicolumn{1}{r|}{\textit{Average}}                                         & 96.69      & 96.38      & 96.73      & 96.95      \\ \cline{2-6} 
+								\multicolumn{1}{|c|}{}                                                   & \multicolumn{1}{r|}{\textit{Global ranking (1-149)}}                            & 4          & 8          & 3          & 5          \\ \hline
+								\multicolumn{1}{|c|}{\multirow{6}{*}{\textbf{Foundations of Wellbeing}}} & {\ul Access to Basic Knowledge}                                               & 98.44      & 98.59      & 98.65      & 98.13      \\ \cline{2-6} 
+								\multicolumn{1}{|c|}{}                                                   & {\ul Access to Information and Communications}                                & 89.62      & 89.99      & 92.16      & 92.29      \\ \cline{2-6} 
+								\multicolumn{1}{|c|}{}                                                   & {\ul Health and Wellness}                                                     & 86.02      & 86.9       & 87.66      & 87.79      \\ \cline{2-6} 
+								\multicolumn{1}{|c|}{}                                                   & {\ul Environmental Quality}                                                   & 84.81      & 85.16      & 85.76      & 86.05      \\ \cline{2-6} 
+								\multicolumn{1}{|c|}{}                                                   & \multicolumn{1}{r|}{\textit{Average}}                                         & 89.72      & 90.16      & 91.06      & 91.06      \\ \cline{2-6} 
+								\multicolumn{1}{|c|}{}                                                   & \multicolumn{1}{r|}{\textit{Global ranking (1-149)}}                            & 3          & 3          & 1          & 2          \\ \hline
+								\multicolumn{1}{|c|}{\multirow{6}{*}{\textbf{Opportunity}}}              & {\ul Personal Rights}                                                         & 98.47      & 98.29      & 98.19      & 98.18      \\ \cline{2-6} 
+								\multicolumn{1}{|c|}{}                                                   & {\ul Personal Freedom and Choice}                                             & 91.84      & 92.43      & 91.59      & 91.73      \\ \cline{2-6} 
+								\multicolumn{1}{|c|}{}                                                   & {\ul Inclusiveness}                                                           & 77.57      & 78.93      & 79.93      & 80.67      \\ \cline{2-6} 
+								\multicolumn{1}{|c|}{}                                                   & {\ul Access to Advanced Education}                                            & 56.48      & 56.11      & 57.14      & 57.43      \\ \cline{2-6} 
+								\multicolumn{1}{|c|}{}                                                   & \multicolumn{1}{r|}{\textit{Average}}                                         & 81.09      & 81.44      & 81.71      & 82.00      \\ \cline{2-6} 
+								\multicolumn{1}{|c|}{}                                                   & \multicolumn{1}{r|}{\textit{Global ranking (1-149)}}                            & 6          & 6          & 5          & 4          \\ \hline
+								\multirow{2}{*}{\textbf{}}                                               & \multicolumn{1}{r|}{\textit{\textbf{Social Progress Index score}}}            & 89.17      & 89.33      & 89.83      & 90.01      \\ \cline{2-6} 
+																										& \multicolumn{1}{r|}{\textit{Overall ranking (1-149)}}                    & 1          & 1          & 1          & 1          \\ \cline{2-6} 
+							\end{tabular}
+						\end{adjustbox}
+					\end{minipage}
+					\vspace*{-1mm}
+				\caption{SPI score for Norway for each indicator, ranking for each dimension and overall SPI score and ranking}
+				\end{table}
+				\vspace*{-\baselineskip}
+		\noindent\rule{15.92cm}{0.4pt}
+		
+		Norway scored extremely high on the SPI and maintained its number one ranking over 2015-18. Norway's best performance, in terms of dimensions, was in the provision of Basic human needs, with an average of 96.95 by 2018, ranking 5/149.
+		
+		However, Norway's worst performance was in the access to advanced education component, having only scored 57.43 by the end of 2018.
+
+		Overall, Norway grew in their aggregate score by 0.84 and maintained their 1/149 ranking.
+		\newpage
+		\subsection{Niger}
+		\vspace*{-6mm}
+		\noindent\rule{15.92cm}{0.4pt}
+				\begin{table}[H]
+					\begin{minipage}{\textwidth}
+						\begin{adjustbox}{width=\textwidth,center=\textwidth}
+							\centering
+							\begin{tabular}{>{\centering\arraybackslash}m{3.97cm}|>{\centering\arraybackslash}m{5.95cm}|>{\centering\arraybackslash}m{1.5cm}|>{\centering\arraybackslash}m{1.5cm}|>{\centering\arraybackslash}m{1.5cm}|>{\centering\arraybackslash}m{1.5cm}|}
+								\hline
+								\multicolumn{1}{|c|}{\multirow{2}{*}{\textbf{Dimensions of the SPI}}}    & \multirow{2}{5.95cm}{\centering\textbf{Score for individual components of SPI (0-100)\footnote{\label{1sttablefoot}Social Progress Imperative. “2019 Social Progress Index.” 2019 Social Progress Index, 2020, www.socialprogress.org/?tab=3\&compare=NER\&prop=SPI. Accessed 8 Feb. 2020.}}} & \multicolumn{4}{c|}{\textbf{Year}}                \\ \cline{3-6} 
+								\multicolumn{1}{|c|}{}                                                   &                                                                               & {\ul 2015} & {\ul 2016} & {\ul 2017} & {\ul 2018} \\ \hline
+								\multicolumn{1}{|c|}{\multirow{6}{*}{\textbf{Basic Human Needs}}}        & {\ul Nutrition and Basic Medical Care}                                        & 51.57      & 53.21      & 54.68      & 55.43      \\ \cline{2-6} 
+								\multicolumn{1}{|c|}{}                                                   & {\ul Water and Sanitation}                                                    & 16.46      & 17.33      & 18.19      & 19.05      \\ \cline{2-6} 
+								\multicolumn{1}{|c|}{}                                                   & {\ul Shelter}                                                                 & 26.76      & 27.00      & 28.23      & 28.98      \\ \cline{2-6} 
+								\multicolumn{1}{|c|}{}                                                   & {\ul Personal Safety}                                                         & 68.75      & 68.84      & 69.31      & 69.42      \\ \cline{2-6} 
+								\multicolumn{1}{|c|}{}                                                   & \multicolumn{1}{r|}{\textit{Average}}                                         & 40.89      & 41.60      & 42.60      & 43.22      \\ \cline{2-6} 
+								\multicolumn{1}{|c|}{}                                                   & \multicolumn{1}{r|}{\textit{Global ranking (1-149)}}                            & 143        & 142        & 140        & 142        \\ \hline
+								\multicolumn{1}{|c|}{\multirow{6}{*}{\textbf{Foundations of Wellbeing}}} & {\ul Access to Basic Knowledge}                                               & 29.82      & 31.05      & 32.66      & 34.05      \\ \cline{2-6} 
+								\multicolumn{1}{|c|}{}                                                   & {\ul Access to Information and Communications}                                & 30.14      & 31.72      & 28.66      & 25.65      \\ \cline{2-6} 
+								\multicolumn{1}{|c|}{}                                                   & {\ul Health and Wellness}                                                     & 46.24      & 46.33      & 46.66      & 46.38      \\ \cline{2-6} 
+								\multicolumn{1}{|c|}{}                                                   & {\ul Environmental Quality}                                                   & 64.65      & 64.78      & 62.51      & 62.87      \\ \cline{2-6} 
+								\multicolumn{1}{|c|}{}                                                   & \multicolumn{1}{r|}{\textit{Average}}                                         & 42.71      & 43.47      & 42.62      & 42.24      \\ \cline{2-6} 
+								\multicolumn{1}{|c|}{}                                                   & \multicolumn{1}{r|}{\textit{Global ranking (1-149)}}                            & 141        & 140        & 142        & 142        \\ \hline
+								\multicolumn{1}{|c|}{\multirow{6}{*}{\textbf{Opportunity}}}              & {\ul Personal Rights}                                                         & 81.21      & 80.46      & 79.44      & 78.51      \\ \cline{2-6} 
+								\multicolumn{1}{|c|}{}                                                   & {\ul Personal Freedom and Choice}                                             & 20.90      & 20.77      & 21.24      & 20.98      \\ \cline{2-6} 
+								\multicolumn{1}{|c|}{}                                                   & {\ul Inclusiveness}                                                           & 46.43      & 47.11      & 46.15      & 47.06      \\ \cline{2-6} 
+								\multicolumn{1}{|c|}{}                                                   & {\ul Access to Advanced Education}                                            & 1.46       & 1.83       & 1.87       & 2.10       \\ \cline{2-6} 
+								\multicolumn{1}{|c|}{}                                                   & \multicolumn{1}{r|}{\textit{Average}}                                         & 37.50      & 37.54      & 37.18      & 37.16      \\ \cline{2-6} 
+								\multicolumn{1}{|c|}{}                                                   & \multicolumn{1}{r|}{\textit{Global ranking (1-149)}}                            & 122        & 123        & 124        & 125        \\ \hline
+								\multirow{2}{*}{\textbf{}}                                               & \multicolumn{1}{r|}{\textit{\textbf{Social Progress Index score}}}            & 40.37      & 40.87      & 40.80      & 40.87      \\ \cline{2-6} 
+																										 & \multicolumn{1}{r|}{\textit{Overall ranking (1-149)}}                    & 137        & 138        & 138        & 138        \\ \cline{2-6} 
+							\end{tabular}
+						\end{adjustbox}
+					\end{minipage}
+					\vspace*{-1mm}
+				\caption{SPI score for Niger for each indicator, ranking for each dimension and overall SPI score and ranking}
+				\end{table}
+				\vspace*{-\baselineskip}
+		\noindent\rule{15.92cm}{0.4pt}
+				
+		Niger scored relatively poorly on the SPI, with an aggregate score of 40.87. Niger scored best on the personal rights component, scoring 78.51, yet a deterioration of 2.7 from 2015.
+
+		Niger scored worst on the Access to advanced education component, having achieved a score of 2.10 by 2018. However, this was an improvement of 0.64 from their 2015 score of 2.46.
+
+		Overall, Niger scored very poorly on the SPI, and placed at position 138/149.
+
+\singlespacing
+\vspace*{-6mm}
+			\section{Comparitive analysis of both contries with the utilisation of various indicators}
+\doublespacing
+\vspace*{-6mm}
+				\subsection{Real GDP per capita}
+				\vspace*{-5mm}
+				\begin{figure}[H]
+					\begin{center}
+				\begin{tikzpicture}
+					\begin{axis}[
+								minor grid style={dashed},
+								scaled ticks=false,
+								table/col sep=comma,
+								title style={font=\footnotesize, align=center},
+								xlabel style={font=\footnotesize},
+								ylabel style={font=\footnotesize},
+								xticklabel style={font=\scriptsize, /pgf/number format/1000 sep=},
+								yticklabel style={/pgf/number format/fixed, font=\scriptsize},
+								legend pos=north west,
+								title=\textbf{Real GDP per capita (Current US\$) comparison between Norway and Niger from 2015-18},
+								ybar=10pt,
+								bar width=.5cm,
+								width=\textwidth,
+        						height=.5\textwidth,
+								ylabel={Real GDP per capita (Current US\$)},
+								xlabel={Year},
+								ymin=0, ymax=90000,
+								legend style={at={(0.5,-0.11)},
+								anchor=north,legend columns=-1},
+								xtick={2015, 2016, 2017, 2018},
+								ytick={0, 10000, 20000, 30000, 40000, 50000, 60000, 70000, 80000, 90000},
+								minor xtick={2015.5, 2016.5, 2017.5},
+								minor ytick={5000, 150000, 25000, 35000, 45000, 55000, 65000, 75000, 85000},
+								yminorgrids=true,
+								ymajorgrids=true,
+								xminorgrids=true,
+								nodes near coords,
+								nodes near coords style={/pgf/number format/.cd,fixed zerofill,precision=2}
+								]
+							
+								\addplot table[x=a, y=b] {NorwayGDPvalues.csv};
+								\addplot table[x=a, y=b] {NigerGDPvalues.csv};
+					\end{axis}
+				\end{tikzpicture}
+			\end{center}
+			\vspace*{-6mm}
+			\caption{World Bank. “GDP per Capita (Current US\$) - Norway | Data.” Worldbank.Org, 2010, data.worldbank.org/indicator/ NY.GDP.PCAP.CD? locations=NO. Accessed 8 Feb. 2020. and World Bank. “GDP per Capita (Current US\$) - Niger | Data.” Worldbank.Org, 2010, data.worldbank.org/indicator/NY.GDP.PCAP.CD?locations=NE. Accessed 8 Feb. 2020.}
+		\end{figure}
+		\vspace*{-6mm}
+		Norway ranks 11/229, relative to Niger, ranked 181/229(\citeauthor{worldometersGDPCapitaWorldometers2017}), in terms of Real GDP per capita. A drastic difference in the Real GDP per capita of both countries can be observed, suggesting that Norway has higher living standards than Niger.
+
+		The main cause of a higher GDP per capita in Norway can be attributed to a larger service sector, with nearly 64\% of the economy dependent on the provision of services, compared to 41.6\% of the Niger economy being dependent on subsistence farming.
+		
+		However, government expenditure in Norway is significantly greater than in Niger, 48.7\%(\citeauthor{tradingeconomicsNorwayGovernmentSpending2018}), compared to 14.52\%(\citeauthor{globaleconomyNigerGovernmentSpending2010}). Further analysis reveals a large proportion of the government budget, nearly 1,084,051 million NOK, beign spent on the provision of social benefits and the compensation of employees, nearly 40\% of government spending, further adding to quality of life, unlike Niger.
+
+				\vspace*{-6mm}
+				\subsection{HDI}
+				\vspace*{-5mm}
+				\begin{figure}[H]
+					\begin{center}
+				\begin{tikzpicture}
+					\begin{axis}[
+								minor grid style={dashed},
+								scaled ticks=false,
+								table/col sep=comma,
+								title style={font=\footnotesize, align=center},
+								xlabel style={font=\footnotesize},
+								ylabel style={font=\footnotesize},
+								xticklabel style={font=\scriptsize, /pgf/number format/1000 sep=},
+								yticklabel style={/pgf/number format/fixed, font=\scriptsize},
+								legend pos=north west,
+								title=\textbf{HDI score comparison between Norway and Niger from 2015-18},
+								ybar=10pt,
+								bar width=.5cm,
+								width=\textwidth,
+        						height=.5\textwidth,
+								ylabel={HDI score (0-1)},
+								xlabel={Year},
+								ymin=0, ymax=1.125,
+								legend style={at={(0.5,-0.11)},
+								anchor=north,legend columns=-1},
+								xtick={2015, 2016, 2017, 2018},
+								ytick={0, 0.25, 0.5, 0.75, 1.0},
+								minor xtick={2015.5, 2016.5, 2017.5},
+								minor ytick={0.125, 0.375, 0.625, 0.875},
+								yminorgrids=true,
+								ymajorgrids=true,
+								xminorgrids=true,
+								nodes near coords,
+								nodes near coords style={/pgf/number format/.cd,fixed zerofill,precision=3}
+								]
+							
+								\addplot table[x=a, y=b] {NorwayHDIvalues.csv};
+								\addplot table[x=a, y=b] {NigerHDIvalues.csv};
+					\end{axis}
+				\end{tikzpicture}
+			\end{center}
+			\vspace*{-6mm}
+			\caption{United Nations. “Work for Human Development Norway Introduction.” United Nations Human Development Reports, 2019, hdr.undp.org/sites/all/themes/hdr\_theme/country-notes/NOR.pdf. Accessed 8 Feb. 2020. and United Nations. Human Development Indices and Indicators: 2018 Statistical Update Briefing Note for Countries on the 2018 Statistical Update. 2019, hdr.undp.org/sites/all/themes/hdr\_theme/country-notes/NER.pdf. Accessed 8 Feb. 2020.}
+			\end{figure}
+			\vspace*{-6mm}
+
+			The HDI ranks Norway as 1st in the world. Niger ranked last, at 189/189 countries. 
+
+			This clearly sides by trends presented for the Real GDP per capita, Norway presents significantly greater living standards due to a better life expectancy and educational system, a result of investments of 30\%(\citeauthor{NorwayEconomy20192019}) of government spending on fixed and human capital, compared to 14\%(\citeauthor{NigerEconomy20192019}) of the Niger government spending, it can be seen that investments in capital have proven to gradually improve quality of life and infrastructure, an otherwise major issue with Niger.
+
+			\vspace*{-6mm}
+			\subsection{SPI}
+			\vspace*{-5mm}
+			\begin{figure}[H]
+				\begin{center}
+			\begin{tikzpicture}
+				\begin{axis}[
+							minor grid style={dashed},
+							scaled ticks=false,
+							table/col sep=comma,
+							title style={font=\footnotesize, align=center},
+							xlabel style={font=\footnotesize},
+							ylabel style={font=\footnotesize},
+							xticklabel style={font=\scriptsize, /pgf/number format/1000 sep=},
+							yticklabel style={/pgf/number format/fixed, font=\scriptsize},
+							legend pos=north west,
+							title=\textbf{SPI score comparison between Norway and Niger from 2015-18},
+							ybar=10pt,
+							bar width=.5cm,
+							width=\textwidth,
+							height=.5\textwidth,
+							ylabel={SPi score (0-100)},
+							xlabel={Year},
+							ymin=0, ymax=100,
+							legend style={at={(0.5,-0.11)},
+							anchor=north,legend columns=-1},
+							xtick={2015, 2016, 2017, 2018},
+							ytick={0, 25, 50, 75, 100},
+							minor xtick={2015.5, 2016.5, 2017.5},
+							minor ytick={12.5, 37.5, 62.5, 87.5},
+							yminorgrids=true,
+							ymajorgrids=true,
+							xminorgrids=true,
+							nodes near coords,
+							nodes near coords style={/pgf/number format/.cd,fixed zerofill,precision=2}
+							]
+						
+							\addplot table[x=a, y=b] {NorwaySPIvalues.csv};
+							\addplot table[x=a, y=b] {NigerSPIvalues.csv};
+				\end{axis}
+			\end{tikzpicture}
+		\end{center}
+		\vspace*{-6mm}
+		\caption{Social Progress Imperative. “2019 Social Progress Index.” 2019 Social Progress Index, 2020, www.socialprogress.org/?tab=3\&compare=NOR\&prop=SPI. Accessed 8 Feb. 2020. and Social Progress Imperative. “2019 Social Progress Index.” 2019 Social Progress Index, 2020, www.socialprogress.org/?tab=3\&compare=NER\&prop=SPI. Accessed 8 Feb. 2020.}
+		\end{figure}
+		\vspace*{-6mm}
+		Norway has once again ranked 1st on the SPI, whereas Niger has ranked 138/149. Considering that the SPI does not consider any economic factors, it can be observed that Niger also faces significant social problems, especially with nearly 45.4\%(\citeauthor{NigerEconomy20192019}) of the Nigerien under the poverty line, compared to 4.5\%(\citeauthor{NorwayEconomy20192019}) in Norway. Although this calls for increases in investment in areas key to escaping the poverty cycle, such as infrastructure, education and medical provisions, the Nigerien government has failed to achieve this.
+
+		
+		\vspace*{-6mm}
+		\section{Conclusion}
+		HDI and SPI are both composite indicators unlike Real GDP per capita. These indicators can provide a better sense of real life living standards due to the consideration of multiple factors over reliance on a single one. However, both composite indicators is the implicitly assume trade-offs between components of the indicator, even though they may be unrelated. On the other hand, GDP per capita cannot be a true representation of living standards due to the inherent issues with measuring living standards using only a single indicator.
+
+		The lack of consideration of economic factors with the SPI, may make living standards in Niger appear better than real life. When indexed, scores on the HDI for Norway prove to be higher than on the SPI, due to consideration of economic factors. On the other hand, the lack of consideration of income distribution and gender equality can obscure important differences in human development. High correlations between the components of HDI may prove to make additional information provided redundant. Unlike the SPI, HDI only considers the material quality of life and fails to take into account intangible qualities of life. The HDI only considers indicators of social inputs, rather than outputs, which is inaccurate.
+
+		The consideration of a large range of indicators is another strength of the SPI, as this allows for an accurate representation even in the scenario that key indicators are missing, making the SPI much easier to measure. However, having a large number of indicators makes data collection much more difficult. 
+
+		Overall, it can be concurred that each index used to measure living standards have their own issues. Utilising indicators that assist one in focusing on specific areas of devlopment, whether social or economic, may prove to have functional use whereas attempting to utilise an indicator to compare all areas of human development may prove to be futile, due to the shortcomings that all indicators possess.
+
+	\singlespacing
+	\newpage
+	\newgeometry{top=0.3cm, bottom=0.3cm, left=0.3cm, right=0.3cm} 
+	\begin{landscape}
+		\appendix
+		\appendixpage
+		\appendixheaderon
+		\section{Action Plan}
+			\begin{longtable}{|m{2.5cm}|m{6.6cm}|m{6.6cm}|m{9.41cm}|}
+				\hline
+			
+				\multicolumn{2}{|c|}{Name: Balaji Adithya Narayanan} & \multicolumn{1}{c|}{\multirow{3}{5cm}{\begin{flushright} Research question:\end{flushright}}} & \multirow{3}{9.41cm}{\begin{scriptsize}
+					To what degree of accuracy do measures of living standards correlate with real life living standards in EMDCs, such as Norway and ELDCs, such as Niger, and allow for accurate comparisons to be made?
+				\end{scriptsize}} \\
+			
+				\multicolumn{2}{|c|}{}& & \\
+				\cline{1-2}
+			
+				\multicolumn{2}{|c|}{Date: 21 January, 2020} & &\\
+				\hline
+			
+				Date/timings: & \multicolumn{1}{c}{Tasks to be completed:} &\multicolumn{1}{|c|}{Resources required:} & \multicolumn{1}{c|}{Evaluation/Follow up action:}\\
+				\hline
+			
+				Tuesday, 21 January 2020 &
+				\underline{\textbf{Non research tasks:}}
+			
+				1. Create an action plan for the following 3 weeks, from the 21st of January to 11th of February. The action plan created should look at all prior commitments and have a contingency time period to account for unforeseen events. The required tasks should be divided up in manner that is feasible and realistic for me, with criterion set by me and acted upon. This action plan created should:
+		
+				\begin{itemize}
+					\item Take into consideration feedback given on previous action plan to iterate and improve on prior task division and consequent results.	
+					\item Also consider events that may take place over the course of the action plan and account for these events when taking into consideration the division of tasks.
+				\end{itemize}
+			
+				2. Create a research document to store all notes and information taken from websites. This document should consist of only bullet point notes. This document is created so that data can easily be collected and added to the report following the completion of research.\newline
+
+		
+				&
+			
+				\underline{\textbf{Non-website sources:}}
+				\newline
+			
+				1. Research task sheet with a list of tasks that must be divided equally amongst the upcoming 3 weeks.
+				\newline
+			
+				This task sheet will provide me with instructions and main ideas I need consider when creating my  action plan, as it pinpoints various small details such as how to break up my task and eplain key details. Resources such as the notes provided by Mr.Ashton in class, will act as a guidance point and possible point of preliminary research, hence assisting me in finding out the information that should be researched in order to answer this research question. Resources provided by Mr. Ashton will be used all throughout the report, hence will also only be listed here once, with the aim of saving space.
+				\newline
+			
+				As the entire report and information provided will be done in the program ``LaTex", hence I will be using my laptop as a physical resource. This resource will also be used all throughout the course of this report, hence will only be listed here once.
+				
+				&
+				
+				Today, I successfully achieved my goals. I managed to find the necessary information specified in the tasks to be completed from rather reputable sources. I decided to not work on the project from the 24th to the 30th of January in order to ensure that I can finish other work assigned by other classes. However, I will be planning for what is to be done in class on the 29th of January. By creating a “deadline” for myself  at the 9th of February, I will push myself to get more done. However, in the case that I am unable to finish what I had aimed to complete, I will have the 10th of January to complete any missing work. I also realised that since I don’t know what indicators I have yet to choose, I cannot specify exactly what concept is to be researched on some of the days that I work on the project. Therefore, I will be making changes to better specify what tasks will be performed on different days once I have chosen my topic and as I work on it. However, I have created a general plan as to what would be the general topic that I would be researching. I also wanted to set my tasks in the form of miniaturised questions as I felt that I could best finish my work when presented to me in that format. I also realised that it would be best for me to analyse the annual company reports of the two firms that will be involved in the merger that I choose at the end of my research as I believe it will give me a better sense of what I would be looking out for as I would have already performed research on the topic. However, I will of course find points where I might use their reports intermittently throughout the research. I have also made the decision this time to follow up on feedback given during the last report - i.e. only add citations of the sources that were directly used in the report. 
+				
+		
+				\\
+				\hline
+			
+				% SECOND PAGE
+			
+				&
+				
+				\textbf{\underline{Research tasks:}}
+			
+				It should be noted that there are relatively minimal research tasks for this day, as an action plan has to be created for the entire course of the following 3 weeks.
+
+			 	1. Perform some general, preliminary research on the topics involved in the report for some fundamental knowledge on how to approach this task. Then use this to set up an action plan accordingly as mentioned above. 
+			 	\newline
+			 	
+			 	2. Begin some basic research on measures of living standards. This should include:
+			 	
+			 	\begin{itemize}
+					\item Why are measures of living standards needed?
+					\item What do measures of living standard represent in an economy?
+					\item Why is it important that said measures correlate as closely as possible in all degrees to real life living standards?
+					\item What are some of the cricisms of popular methods of measuring living standards?
+					\item What can measures of living standards assist economists with?
+					\item How are some composite indicators of living standards calculated?
+				\end{itemize}
+		 	
+			  	& 
+		 	
+				\textbf{\underline{Websites to use:}}
+				\newline
+			
+				\begin{itemize}
+					\item Investopedia - ``Living Standards''
+					\item Investopedia - ``Geinuine Progress Indicator''
+					\item Investopedia - ``Human Devlopment Index''
+					\item OECD - ``Better Life Index''
+					\item Investopedia - ``Index of Economic Freedom''
+					\item Wikipedia (Only used for starting platform research) - ``Human Devlopment Index''
+					\item Research gate - ``Composite Indicators of development''
+				\end{itemize}
+				
+				&
+				I have also decided to follow up on feedback given for the previous action plan, to include sources that I have preanalysed and determined as being completely useful.
+
+
+				I feel that I did not face any problems today while working on my action plan and performing research apart from the time it took to properly evaluate all variables involved, such as other projects that are running side by side and Mock IGCSE revisions. However, I feel that this will pay off in the following days as I put in more heavy work into the project.
+
+				I have decided to split my tasks into Research and Non-research tasks that I will perform on a day-to-day basis in order to make what I am doing more clear and evident once categorized in such a manner. 
+
+				As for the format for the action plan, I will also not be writing my research information in my action plan as that is unnecessary and will be presented in my report at the end. I will ensure that I purely stick to talking about the success/failures in my research and any decisions that I made and the success/failure rate of them.
+
+				I used a number of different sources also, so as to cover information that may have been missed out in other sources. It will help add detail to my work and when condensed in order to fit it within the word limit, it will ensure greater detail is preserved in my condensed writing than if I had written with information from only one source. On the topic of sources, I also decided that I may reuse a few sources for conducting some parts of my research and that I will mention some sources again as I would have used them to perform the allocated task on a certain day. 
+
+				I have noted the types, and examples of indicators of living standards in my research document successfully. I have looked at the different types of indicators and differences between them. I also looked at the differences between a composite and non composite indicator and why either may be used over another.
+
+				
+
+				
+				\\
+				\hline
+				% SECOND PAGE
+				
+				Wednesday, 22 January 2020
+
+				&
+				
+				\textbf{\underline{Research tasks:}}
+				
+				1. Research prospect countries or measures of living standards that could be subject to investigation in my report while ensuring to keep in mind the following:
+				\begin{itemize}
+					\item Ensure that the countries and indicators that I may want to investigate have higher media coverage so that information about these countries and indicators can be better accessed
+					\item Ensure that the data regarding the indicators and countries are open and details of the indicator can be viewed by the public
+				\end{itemize}
+
+
+			 	
+			 	2. Some questions to be asked can include:
+				 
+				 
+			 	\begin{itemize}
+					 \item Wikipedia (Only used for starting platform research) - ``Human Devlopment Index'' - Highest ranked countries
+					 \item Statistical -``Social progress index''
+					 \item CIA - ``The world Factbook''
+					 \item HDR - ``UNDP''
+					 \item Investopedia - ``GPI''
+			 	\end{itemize}
+		 	
+			  	& 
+		 	
+				\textbf{\underline{Websites to use:}}
+				\newline
+			
+				\begin{itemize}
+					\item Intelligent economist - "Tax systems"
+					\item Investopedia - "Regressive vs. Proportional vs. Progressive Taxes: What's the Difference?"
+					\item Investopedia - "Regressive vs. Proportional vs. Progressive Taxes: What's the Difference?"
+					\item Quickonomics - "Three Types of Tax Systems"
+					\item Nomad Capitalist -"The 4 income tax systems around the world"
+					\item Smart asset - "Types of taxes"
+					\item Thoughtco.- "What Are the Different Types of Taxes?"
+					\item Investopedia - "Taxes"
+				\end{itemize}
+				
+				&
+				Today was productive. I looked at many websites for indicators and countries. I figured that an indicator used by aprominent figure or organiaztion would be covered by the media heavily. I looked at singular websites with top used indicators and renowned EMDCs and ELDCs in regards to living standards. I also chose 2018 as the limit for my data collection for the last 4 years as data for 2019 seems to not be available anywhere. Also, choosing to use data from 2019 for one set of my data may mean that for other sets of data may not be available for 2019. I spent time in Mr. Wailes’ class investigating many different countries and looking at ones that seemed to interest me. I then evaluated them throughout the time of the day and came to a decision.
+
+				Eventually, I decided that I would look at either Singapore and Zimbabwe or Norway and Niger. Norway and Niger seemed like a good possible option to me, as it looked interesting in terms of being polar opposites on the HDI. Comparing these 2 countries with different indicators may help show whether each country is seen the same way, i.e. the country with teh best or the worst living standards. However, I worry that I may not be able to find information for Norway online. Hence I am second guessing this. On the other hand, Singapore and Zimbabwe look interesting as I live in Singapore and getting a chance to analyse my own country's standard of living compared to others might be interesting. Also, as Africa is technically least developed continent, I thought it might be interesting to look at the most developed african country that is still considered a country with low development by the HDI. There may be good comparisons to make, however, I am also doubting this because I already live in Singapore and possible researching my own country further may prove to get boring in the longer span of 3 weeks.
+
+				Overall however, I feel I need time to think through this dilemma and figure out which Country combination would be appropriate to investigate. By tomorrow I will have picked either my indicators or my countries and begun research on a pair of them. By the day after, I will have also chosen the other missing component of my report.
+
+				
+				\\
+				\hline
+				% SECOND PAGE
+				
+				Thursday, 23 January 2020
+
+				&
+				
+				\textbf{\underline{Research tasks:}}
+				
+				1. Research and create a research question with my chosen countries - Norway and Niger.
+
+				\textbf{\underline{Non-Research tasks:}}
+				
+				1. Using the research performed on the 21st of January, begin the introduction to the report, explaining why the research question is important
+
+			  	& 
+		 	
+				\textbf{\underline{Websites to use:}}
+				\newline
+			
+				\begin{itemize}
+					\item Wikipedia (Only used for starting platform research) - ``Norway'' 
+					\item Wikipedia (Only used for starting platform research) - ``Niger''
+					\item HDR - ``Norway''
+					\item HDR - ``Niger''
+					\item HLI - ``Niger''
+					\item HLI - ``Norway''
+				\end{itemize}
+				
+				&
+				
+				I have made my decision, I will be investigating Norway and Niger. The main reasoning behind this was that I felt looking at Singapore once again would not prove to be interesting as I already have an unerstanding about this country. Although it would pose a degree of a challenge, I feel that I would like to look at the polar opposites of living standards and what makes Norway the best in the world in terms of the HDI and Niger the least developed country. I feel that I have a greater opportunity to learn something new. I hope to learn about what seperates a country like Norway from a country like Singapore and the same with Niger. This is a great opportunity to learn something new.
+				
+				As for today’s tasks, I felt that it would be best to get started on the project right away, as I would be spending the holidays performing self study and working on other reports with closer due dates. Also, by looking at my research question, I can collect some basic information in order to ensure that I can understand the economies of Norway and Niger, as this would ensure greater clarity around understanding the quality of life in each of these countries.
+				
+				As I had just chosen Niger, I found that finding information about Niger quite difficult. I am aware that this is the norm, however, I believe that by researching this country, I can take on a challenge to find information about this country. I am sure that many issues like this will be present in the future as I continue to research these countries further. However, trying to learn about these new countries will not only teach me new concepts but will also ensure that my research techniques and skills will grow as I am forced to try and find new ways to understand and research concepts from different sources.
+				
+				Overall however, I feel that I achieved my research goals today and was able to find information that was consistent and helpful in allowing me to understand the background of my chosen countries.
+
+				As for my indicators, I have chosen to cover the Human Development Index and The Human Life Index as they contrast very well and I have found the necessary data for this.
+
+				
+				\\
+				\hline
+				&&&As for my indicators, I have chosen to cover the Human Development Index and The Human Life Index as they contrast very well and I have found the necessary data for this.\\
+				\hline
+				% SECOND PAGE
+				
+				Wednesday, 29 January 2020
+
+				&
+				
+				\textbf{\underline{Research tasks:}}
+				
+				1. Research the data for the Real GDP per capita for the last 4 years, from 2015-2018 and record this, along with any other relevant information in a table for Norway and Niger
+
+			  	& 
+		 	
+				\textbf{\underline{Websites to use:}}
+				\newline
+			
+				\begin{itemize}
+					\item The balance - ``Real GDP per capita''
+					\item World Bank - ``Real GDP per capita in CUrrent US\$''
+					\item Worldometers - ``Niger Population''
+					\item Worldometers - ``Niger population growth''
+					\item \item Worldometers - ``Norway Population''
+					\item Worldometers - ``Norway population growth''
+				\end{itemize}
+				
+				&
+				
+				Originally, I aimed to perform a slightly directed and more purposeful background research rather than the comparatively aimless research that I did last week that only looked into the simpler side of the measures of living standards, and perform research and identify the main points of the causes of the acquisition. I needed this new work ethic as I am continuing my work about a week alter and I need to make sure that I get back on track and use all my time in my Economics classes usefully. Trying out this new work ethic for me that utilizes main points and concerns to pilot my research truly paid off. Prior to this task, I would often just look at the task sheet while jumping from one point to another in the task sheet as I was unaware of what research to perform. This was rather unproductive as I would not be able to focus on one question and answer with intent. It was also wise to do the task of choosing my research points in the weekend and during class, so that when I am at my most productive at home, I can focus on completing important parts of the task without wasting time attempting to figure out what I should be doing. 
+
+				Overall, today was very productive and I have made the tables for question 3, providing some additional information on populationan adn population growth as these are factors that directly influence Real GDP per capita. With this data, it would be easier to comprehend that increases in the Real GDP per capita were due to boosts in productiveness and not due to an increasing labour force or decreasing population size.
+				
+				\\
+				\hline
+
+				% SECOND PAGE
+				
+				Friday, 31 January 2020 - Sunday, 2 February
+
+				&
+				
+				\textbf{\underline{Research tasks:}}
+				
+				1. Research the data for reasonings behind the increments in the real GDP per capita and major economic events that took place
+				2. Record the information on each of the indicators and place this in a format such as a table
+
+			  	& 
+		 	
+				\textbf{\underline{Websites to use:}}
+				\newline
+			
+				\begin{itemize}
+					\item Intelligent economist - "Real GDP per capita"
+					\item The balance - "Real GDP per capita"
+				\end{itemize}
+				
+				&
+				
+				I have completed the task over the weekend and I believe this is the most appropriate time to gather this information. The time period for this task was extended as finding data for HLI was rather difficult. Hence I needed more time to gather data nad balance other extra tasks that I had outside of this report. I also had to explain what these indicators represented and hence this took some more time to analyse what was happening in the economy during the year for which this data was gathered. I only gathered data for 1 year as this was what was only available from my side.
+				
+				\\
+				\hline
+
+				% SECOND PAGE
+				
+				Monday, 3 February 2020 - Thursday, 6 February
+
+				&
+				
+				\textbf{\underline{Non-Research tasks:}}
+				
+				1. Convert the data collected for all 3 indicators into 3 different bar graphs as a method of comparison.
+				
+				\textbf{\underline{Research tasks:}}
+				1. Complete research on major points of data that support the discrepancies between the values of the different indicators.
+
+			  	& 
+		 	
+				\textbf{\underline{Websites to use:}}
+				\newline
+			
+				No prerecognized essential resources
+				
+				&
+				
+				I have completed the task over the week. The reason I need so much time for this was because I wanted to gather all of the relevant data, before I would cut out the excess later on when cutting down my word count. This was rather important as it allowed me to provide a reasoning to such discrepancies.
+
+				\\
+				\hline
+
+				% SECOND PAGE
+				
+				Sunday, 9 February 2020 - Monday, 10 February
+
+				&
+				
+				\textbf{\underline{Non-Research tasks:}}
+				
+				1. Perform research on the pros and cons of the different indicators and why a couple indicators better than others
+				
+				\textbf{\underline{Research tasks:}}
+				1. Change the indicator for HLI to SPI and all relevant comparison indicators
+
+			  	& 
+		 	
+				\textbf{\underline{Websites to use:}}
+				\newline
+			
+				
+				No prerecognized essential resources
+				
+				&
+				
+				I have encountered a major problem with my report. I believe it is better if the data I provide for my second indicator is of multiiple years. I will need to change my indicator as the last time I researched HLI, the only data available was for 1 specific year. Hence I will also be making the data for my HDI of multiple years and extend my bar charts to make them cover multiple years. I will also be rsearching the pros and cons of my newer indicators and explain them in my conclusion.
+
+				It is successful, I have finally changed all the data on my report to be congruent with being a multi year representation.
+				
+				\\
+				\hline
+
+				% SECOND PAGE
+				
+				Friday, 7 February 2020 - Saturday, 8 February
+
+				&
+				
+				\textbf{\underline{Non-Research tasks:}}
+				
+				1. Complete source evaluation using the OPVL method
+
+			  	& 
+		 	
+				\textbf{\underline{Websites to use:}}
+				\newline
+			
+				None
+				
+				&
+				
+				I have completed my source evaluation using the OPVL method for 2 of my sources. This should prove to be accurate.
+				
+				\\
+				
+			\end{longtable}
+	\end{landscape}
+	
+	\newgeometry{top=1in, bottom=1in, left=1in, right=1in} 
+	\section{Source Evaluation}
+	
+	3 of the main sources used in this report were the World Bank, Investopedia and the European Commission. These sources wre the most important sources used as they allowed me to gather the main sources of data to use in the major tables in this report and graphs. Investopedia was one of the most important sources that I used in terms of infromation that it provided. This source is an online website that aims to improve financial education amongst those lacking it and provide clarifications on doubts that individuals may have. Investopedia is a source that aims to improve kn financial knowledge and aims to "empower every person to feel in control of their financial future"(Investopedia). Investopedia provides financial advice and attempts to make those financially illiterate, literate. A limitation was that some terminologies could have also been better defined, however, it can be argued that the use of hyperlinks to articles explaining the meaning of a particular subject in detail, would suffice. The world bank was another major source and was extremely reliable as it is an international organization affiliated with numerous governments around the world. The world bank had 1 major limitation, some data points were only available up till 2018. Finall, The European Commission was a source used to analyse the economic stance of Norway and proved crucial in understanding its economy. The European commision had 1 major limitation, data given was not entirely up to date and was only given in the form of charts and not actual values.
+
+
+	\newpage
+	\nocite{*}
+	\printbibliography
+\end{document}

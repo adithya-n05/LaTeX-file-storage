@@ -1,0 +1,426 @@
+\documentclass[11pt, a4]{article}
+\usepackage[a4paper, top=1in, bottom=1in, left=1in, right=1in]{geometry}
+\usepackage{color} 
+\usepackage[pdftex]{hyperref}
+\hypersetup{colorlinks=true, linktoc=all, linkcolor=black,}
+\usepackage[export]{adjustbox}
+\usepackage{float}
+\restylefloat{table}
+\usepackage{array}
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\pgfplotsset{scaled y ticks=false}
+\usepackage{multirow}
+\usepackage{callouts}
+\usepackage{mhchem}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage[justification=centering]{caption} 
+\usepackage{titlesec}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{circuitikz}
+\usepackage[font=small, skip=0pt]{caption}
+\usepackage{tabularx}
+\newenvironment{conditions*}
+  {\par\vspace{\abovedisplayskip}\noindent
+   \tabularx{\columnwidth}{>{$}l<{$} @{\ : } >{\raggedright\arraybackslash}X}}
+  {\endtabularx\par\vspace{\belowdisplayskip}}
+
+\title{\vspace{90mm}A qualitative analysis of various cations and anions present in numerous water sources and an investigation of the origins and effects of hard water} 
+\author{Adithya Narayanan}
+\date{5 May, 2020}
+
+\begin{document}
+	\begin{titlepage}
+		\maketitle
+		\thispagestyle{empty}
+	\end{titlepage}
+	\tableofcontents
+	\thispagestyle{empty}
+	\newpage
+	\clearpage
+	\setcounter{page}{1}
+	\section{Section A:}
+		\subsection{Background information:}
+			\subsubsection{Origin of underground water (For samples A, C, D):}
+				Although water sourced from underground sources is defined rather broadly, the accepted definition remains that it is water acquired from an aquifer. An aquifer is an ``[underground] body of rock and/or sediment that holds groundwater"(National Geographic Society). Groundwater is generally considered as being precipitation that has penetrated the soil and has collected underground in gaps between the sedimentary rock present underground. Aquifers can usually be divided into 2 main types, confined and unconfined. Confined aquifers are defined as aquifers where ``an impermeable dirt/rock layer exists that prevents water from seeping into the aquifer from the ground surface located directly above''(“Types of Aquifers”), usually clay, whereas unconfined aquifers are the inverse, and contain a permeable layer of sedimentary rock that allows for water to naturally be released at the surface. 
+
+				A common misconception remains that aquifers are similar to ``underground lakes" or rivers. However, this is not the case, rather aquifers are layers of sedimentary rock that are saturated with water. The term saturation refers to the idea that spaces between sedimentary rock, i.e pores, are nearly completely filled with water.
+
+				Spring water here, originates when this saturated water escapes from underground sources and arrive at the surface. The cause of this is the presence of confined aquifers nearby, where built up pressure, due to the impermeability of the sedimentary rock, result in the movement of water to nearby unconfined aquifers and the eventual release of water in the form of a spring.
+			
+			\subsubsection{Purity of spring water (For sample D):}
+
+				Contrary to what logical judgement would suggest, spring water is rather pure, even though it is sourced from sedimentary layers of soil. The cause of this, is the creation of a natural "filtering" of groundwater, as it moves up through various layers of sedimentary rock, where contaminants are trapped in layers of the sedimentary rock. Sedimentary rock is formed into layers by stratification, hence a filtering effect, similar to one that takes place in water filtering plants, takes place, however, ot to a similar degree in terms of cleanliness.
+
+			\subsubsection{Composition of limestone:}
+
+				Limestone is composed of numerous substances, and can be divided into 3 sections (British Geological Survey):
+
+				\begin{itemize}
+					\item Calcite and aragonite
+					\item Dolomite
+					\item Impurities
+				\end{itemize}
+
+				Calcite, a form of Calcium Carbonate, with the chemical formula $CaCO_3$, is the main constitute of naturally found limestone and usually forms crystals of various shapes that are usually white in colour. Aragonite, a more unstable form of Calcium Carbonate, has the same chemical formula, and is usually found in shells of crustacean animals and in calcareous sediment. However, when turned into a rock form, aragonite returns to its more stable form, calcite. However, for the purposes of this investigation, it can be observed that sedimentary limestone structures near the water spring, would be mainly composed of mostly calcite.
+
+				Dolomite, with the chemical formula $CaMg(CO_3)_2$, is formed when liquids rich in Magnesium Carbonate ($MgCO_3$) pass through limestone with Calcite ($CaCO_3$) and the following chemical reaction occurs:
+
+				\begin{equation}
+					\ce{MgCO_3{(aq)} + CaCO_3(aq) -> MgCa(CO_3)_2(aq)}
+				\end{equation}
+				
+				Dolomite is found in low concentrations in limestone and is usually only found in higher concentrations in dolostone, a type of sedimentary rock.
+
+				Finally, limestone is also composed of numerous impurities, which may include other sedimentary rocks mixed into the rock during its formation. These are in rather low concentrations, hence can be ignored for the purpose of this experiment.
+
+			\subsubsection{Weathering of sedimentary rock:}
+				
+				The addition of sedimentary rock into underground water sources occurs due to the weathering of sedimentary rock, which can be categorised into 2 main types (British Geological Survey):
+
+				\begin{itemize}
+					\item Mechanical weathering
+					\item Chemical weathering
+				\end{itemize}
+
+				Mechanical weathering occurs when water erodes away sedimentary rock by physical means. An example of this would be where water enters the cracks between sedimentary rock and expands when cooled and contracts when warmed due to the natural weather of the surroundings.
+
+				Chemical weathering on the other hand, occurs when sedimentary rock decomposes due to chemical reactions between the water, such as dissolution, especially when the water is acidic. For example, when precipitation occurs over an aquifer, typically acidic rain water enters the soil and dissolves limestone. As the water exits a water spring for example, dissolved limestone is usually carried with it, thus weathering away the limestone. 
+
+			\subsection{Dissolution and dissociation of sedimentary rock in underground water sources:}
+				For underground water sources, various sedimentary rock can dissolve into water sources. Dissolved sedimentary rock ionic molecules can dissociate into their constituent anion and cation. For example, the dissociation of calcium carbonate molecules, the main constituent of limestone, into their constituent cation, $Ca^{2+}$ and polyatomic anion, $CO_{3}^{2-}$ occurs when in water. When in water, the coulomb's force between the ions of the compound decreases significantly, assuming all other variables remain constant.
+		
+		\subsection{Identification of anions:}
+				\subsubsection{Source A:}				
+					\textbf{Source of anion:}
+
+					Identifying the predominant anion present in geothermal springs is rather difficult. Various analyses would show that the major anions present are Sulfate and Chloride anions. An analysis of 49 geothermal springs show that chloride however, is the most predominant anion present in geothermal springs. The cause of this would be the movement of water through sedimentary rock that contained ionic compounds such as $NaCl$. This would result in the dissolution of dissociated chloride anions. It can also be observed that concentrations of chloride anions are higher than all other anions listed, in most cases. For example, in the first 4 springs, the bicarbonate anion is the most common anion present, while in most of the springs in the range 5-42, chloride anions are the most predominant anions present. The cause of this high concentrations of anions can be attributed to the ability to dissolve more substances in the water when it is heated up to higher temperatures. The predominant anion may even change based on the composition of sedimentary rock in the aquifer from which the geothermal spring originates from.
+					
+				
+					\begin{figure}[H]
+						\begin{center}
+						\end{center}
+						\caption{Schäffer, Rafael. Anion Composition of Thermal Springs and Reference Springs in Mg/l; (-) under Detection Limit, July 2013, www.researchgate.net/figure/Anion-composition-of-thermal-springs-and-reference-springs-in-mg-l-under-detection\_tbl3\_271914454. Accessed 4 May 2020.}
+					\end{figure}
+					
+					Therefore, the anion to be investigated will be chloride anions.
+
+					\noindent \textbf{Procedure and observations made:}
+
+					\begin{enumerate}
+						\item Measure 3 mL of the geothermal water solution
+						\item Add the contents of the measuring cylinder to a test tube
+						\item Place the test tube in a test tube rack
+						\item Add 2 drops of red litmus or dip a red litmus paper into the test tube
+							\begin{enumerate}
+								\item Here the red litmus will stay red
+							\end{enumerate}
+						\item Repeat steps 1 to 3, ensuring to use a different test tube and to flush the measuring cylinder 3 times with distilled water if being reused
+						\item Add 1 mL of Barium Nitrate solution to the test tube
+							\begin{enumerate}
+								\item No precipitate should be observed
+							\end{enumerate}
+						\item Repeat step 5
+						\item Add 1 mL of Silver Nitrate solution to the test tube
+						\begin{enumerate}
+							\item A white precipitate should form
+						\end{enumerate}
+						\item Add 1 mL of aqueous ammonia solution to the same test tube
+							\begin{enumerate}
+								\item The white precipitate should disappear
+							\end{enumerate}
+					\end{enumerate}
+				
+					\noindent \textbf{Chemical observations:}
+
+					At step 4 the red litmus stayed red. This is attributable to the acidity of the chloride ion. Due to its acidic nature of having a pH below 7, results in the solution staying red.
+
+					At step 6 the addition of a Barium Nitrate solution results in Barium chloride salts being formed. This has the following reaction:
+
+					\begin{equation}
+						\ce{2NaCl{(aq)} + Ba(NO_3)_2(aq) -> 2NaNO3(aq) + Ba(Cl)_2(aq)}
+					\end{equation}
+
+					However, Barium chloride is soluble, hence it stays in solution. 
+
+					At step 8, the addition of a silver nitrate solution results in the creation of Silver Chloride, which is insoluble in the solution. Hence, it precipitates out of solution and a white precipitate is observed. It has the following reaction:
+
+					\begin{equation}
+						\ce{NaCl{(aq)} + Ag(NO_3)(aq) -> NaNO3(aq) + Ag(Cl)(s)}
+					\end{equation}
+
+					A further step must be taken to confirm if the anion is chloride and not iodide, identified by the addition of an ammonia solution.
+					
+					At step 9, the addition of the ammonia solution causes the precipitate to disappear. The dissolution of ammonia in water has the following reaction:
+
+					\begin{equation}
+						\ce{NH_3{(g)} + H_2O(l) -> NH_4OH{(aq)}}
+					\end{equation}
+
+					The final ammonium hydroxide forms a complex with silver chloride, which promotes solubility in water, with the following reaction:
+
+					\begin{equation}
+						\ce{AgCl{(aq)} + NH_4OH(aq) -> [Ag(NH_3)]Cl(aq) + H_2O(l)}
+					\end{equation}
+					
+					As such, the solution becomes transparent and no more precipitate can be seen, as it dissolves into the solution. This confirms the presence of chloride anions in the solution.
+
+
+				\subsubsection{Source B:}
+
+				\textbf{Source of anion:}
+
+					The likely source of the anion is $NaCl$, i.e. Sodium Chloride. There are many other minerals in seawater, but the concentration of sodium chloride is much higher than other sources. This is due to the high salt content in sea water. Therefore, the anion to be investigated will also be chloride.
+
+				\noindent \textbf{Procedure and observations made:}
+
+					As the anion to be investigate is exactly the same as the previous section, the same procedure and equations will be demonstrated here.
+					
+					\begin{enumerate}
+						\item Measure 3 mL of the contaminated pond water solution
+						\item Add the contents of the measuring cylinder to a test tube
+						\item Place the test tube in a test tube rack
+						\item Add 2 drops of red litmus or dip a red litmus paper into the test tube
+							\begin{enumerate}
+								\item Here the red litmus will stay red
+							\end{enumerate}
+						\item Repeat steps 1 to 3, ensuring to use a different test tube and to flush the measuring cylinder 3 times with distilled water if being reused
+						\item Add 1 mL of Barium Nitrate solution to the test tube
+							\begin{enumerate}
+								\item No precipitate should be observed
+							\end{enumerate}
+						\item Repeat step 5
+						\item Add 1 mL of Silver Nitrate solution to the test tube
+						\begin{enumerate}
+							\item A white precipitate should form
+						\end{enumerate}
+						\item Add 1 mL of aqueous ammonia solution to the same test tube
+							\begin{enumerate}
+								\item The white precipitate should disappear
+							\end{enumerate}
+					\end{enumerate}
+				
+					\noindent \textbf{Chemical observations:}
+
+					At step 4 the red litmus stayed red. This is attributable to the acidity of the chloride ion. Due to its acidic nature of having a pH below 7, results in the solution staying red.
+
+					At step 6 the addition of a Barium Nitrate solution results in Barium chloride salts being formed. This has the following reaction:
+
+					\begin{equation}
+						\ce{2NaCl{(aq)} + Ba(NO_3)_2(aq) -> 2NaNO3(aq) + Ba(Cl)_2(aq)}
+					\end{equation}
+
+					However, Barium chloride is soluble, hence it stays in solution. 
+
+					At step 8, the addition of a silver nitrate solution results in the creation of Silver Chloride, which is insoluble. Hence, it precipitates out of solution and a white precipitate is observed. It has the following reaction:
+
+					\begin{equation}
+						\ce{NaCl{(aq)} + Ag(NO_3)(aq) -> NaNO3(aq) + Ag(Cl)(s)}
+					\end{equation}
+
+					A further step must be taken to confirm if the anion is chloride and not iodide, identified by the addition of an ammonia solution.
+					
+					At step 9, the addition of the ammonia solution causes the precipitate to disappear. The dissolution of ammonia in water has the following reaction:
+
+					\begin{equation}
+						\ce{NH_3{(g)} + H_2O(l) -> NH_4OH{(aq)}}
+					\end{equation}
+
+					The final ammonium hydroxide forms a complex with silver chloride, which promotes solubility in water, with the following reaction:
+
+					\begin{equation}
+						\ce{AgCl{(aq)} + NH_4OH(aq) -> [Ag(NH_3)]Cl(aq) + H_2O(l)}
+					\end{equation}
+					
+					As such, the solution becomes transparent and no more precipitate can be seen, as it dissolves into the solution. This confirms the presence of chloride anions in the solution.
+
+		\subsection{Identification of cations:}
+		
+			\subsubsection{Source C:}
+							
+			\textbf{Source of anion:}
+
+			The cause of a bitter or metallic taste in water can be attributed to either high zinc or copper concentrations. There are also 316 different contaminants that can cause this, however zinc and copper are the main cations that can cause such a taste with water. In many cases, the predominant anion causing a bitter or metallic taste would be copper ions, $Cu^{2+}$. This would enter the water supply and the aquifers holding water, by leaking through via sedimentary rock or underground copper deposits. Although copper cannot directly dissolve in water, the dissolution of copper salts would allow copper ions to dissociate and be dissolved in the solution or stay in suspension.
+
+			\noindent \textbf{Procedure and observations made:}
+
+			\begin{enumerate}
+				\item Measure 3 mL of the bore water solution
+				\item Add the contents of the measuring cylinder to a test tube
+				\item Place the test tube in a test tube rack
+				\item Add 2 drops of a dilute sodium hydroxide solution
+					\begin{enumerate}
+						\item Here a blue precipitate should be observed
+					\end{enumerate}
+				\item Add aqueous ammonia solution in excess
+					\begin{enumerate}
+						\item The blue precipitate would disappear and the formation of a blue solution is observed.
+					\end{enumerate}
+			\end{enumerate}
+
+			\noindent \textbf{Chemical observations:}
+
+			In step 4, the addition of sodium hydroxide solution to the water with predominantly copper cations, would produce copper hydroxide and sodium ions, which would bond with the anion that bonded with copper originally, as shown in the equation below:
+
+			\begin{equation}
+				\ce{Cu^{2+}(aq) + 2NaOH (aq) -> Cu(OH)_2 (s) + 2Na^+(aq)}
+			\end{equation}
+ 
+			As observed, the sodium stays in solution and bonds with the other anion in solution to form a salt, while the copper hydroxide formed is insoluble in water. Hence it precipitates out of solution and gives a blue colour to the solution.
+
+			In step 5, aqueous ammonia solution is added to the solution, the ammonium hydroxide produced (see equation 4) reacts with copper hydroxide to form Schweizer's reagent (the complex ion below bonded to di-hydroxide) and water.
+
+			\begin{equation}
+				\ce{Cu(OH)_2 (s) + 4NH_4OH (aq) -> [Cu(NH_3)_4](OH)_2 (aq) + 4H_2O (l)}
+			\end{equation}
+
+			Schweizer's reagent is soluble in water, hence it dissolves into the solution and a deep blue colour is observed. Along with this, some water is also produced. Thus, the presence of copper has been confirmed via the use of these tests.
+
+			\subsubsection{Source D:}
+			With the establishment that the major cation present in the solution obtained being the Calcium ($Ca^{2+}$) ion, the following section will cover the identification process for the cation.
+
+			\noindent \textbf{Procedure and observations made:}
+			\newline
+				As this is a solution, the cations present in the solution will be tested with the use of Sodium Hydroxide. At each stage, if applicable, the expected observation will be shown and hence, the respective following action to take will be taken in the next step.
+				\begin{enumerate}
+					\item Measure 3 mL of the spring water solution
+					\item Add the contents of the measuring cylinder to a test tube
+					\item Place the test tube in a test tube rack
+					\item Add 2 drops of the sodium hydroxide solution
+						\begin{enumerate}
+							\item Here a white precipitate should be observed
+						\end{enumerate}
+					\item Add sodium hydroxide solution in excess
+						\begin{enumerate}
+							\item The white precipitate should still be visible regardless of the amount of sodium hydroxide added in excess
+						\end{enumerate}
+					\item Repeat steps 1 to 3, ensuring to use a different test tube and to flush the measuring cylinder 3 times with distilled water if being reused
+					\item Add 10 drops of aqueous ammonia solution to the test tube
+					\begin{enumerate}
+						\item Little to absolutely no precipitate should be observed and the solution should remain clear
+					\end{enumerate}
+				\end{enumerate}
+			
+			\noindent \textbf{Chemical observations:}
+
+				At step 4, the addition of sodium hydroxide to the solution creates a white precipitate. The chemical equation for this reaction is as follows:
+
+				\begin{equation}
+					\ce{CaCO_3{(aq)} + 2NaOH(aq) -> Na_2CO_3(aq) + Ca(OH)_2(s)}
+				\end{equation}
+				
+				The addition of sodium hydroxide to aqueous calcium carbonate causes a redox or double displacement reaction to take place, where the products of the reaction are Calcium hydroxide and Sodium carbonate. The main precipitate and the focus of this investigation will be calcium hydroxide. Calcium hydroxide is only slightly soluble in water, hence it precipitates out of solution. Calcium hydroxide holds a white colour, hence as it precipitates out as a solid, it gives the test tube a white colour. Calcium hydroxide is also known as Slaked Lime
+
+				The further addition of sodium hydroxide in excess in step 5, ensures that all remaining calcium carbonate molecules, which have now dissociated into their constituent ions, have reacted completely. However, as the precipitate produced is still calcium hydroxide, which is only slightly soluble, the solution still has a white colour, given to it by the colour of calcium hydroxide, white.
+
+				In step 7, the addition of 10 mL of aqueous ammonia presents the following chemical reaction:
+
+				\begin{equation}
+					\ce{NH_4OH{(aq)} + CaCO_3(aq) -> NH_4OH{(aq)} + CaCO_3(aq)}
+				\end{equation}
+
+				As shown above, no observable precipitate is formed, but it must be observed that during this step, a light white colour may be observed attributable to the formation of some calcium hydroxide molecules. However, a majority of the molecules do not react. As such, it can be said that no chemical reaction takes place, hence the above equation for the addition of aqueous ammonia to the solution. It should be noted that the above reaction only accounts for the majority of the solution, not for the molecules that may react to form calcium hydroxide, which can be described using the following chemical equation:
+
+				\begin{equation}
+					\ce{2NH_4OH{(aq)} + CaCO_3(aq) -> (NH_4)_2CO_3{(aq)} + Ca(OH)_2(s)}
+				\end{equation}
+
+				The above redox reaction can be used to describe the reaction that takes place when very few calcium hydroxide ions are formed and is only representative of the minority of the reaction and is used to explain why there may be a slight white tint to the solution. However, regardless, equation 13 still remains representative of the majority of the ions present in solution.
+
+				For reference, the ammonium hydroxide in the above reaction was created via the dissolution of ammonia in water, as below:
+
+				\begin{equation}
+					\ce{NH_3{(g)} + H_2O(l) -> NH_4OH{(aq)}}
+				\end{equation}
+
+				It can be observed that as the water is in excess, the reacted ammonium hydroxide molecules are dissolved in the excess water that remains. This reaction is only for the molecules of water that react with the ammonia, not for the excess used for dissolution. 
+
+				These 2 specific tests must be performed to narrow down the ion, as calcium, zinc and aluminium all form white precipitates when sodium hydroxide is added. When sodium hydroxide is added in excess, the presence of either zinc or calcium would cause the solution to have a white colour too, with only the presence of aluminium causing the solution to slowly turn colourless as more sodium hydroxide solution is added in excess. Hence, to confirm that the ion present is calcium, tests with aqueous ammonia must be performed. When aqueous ammonia is added, only calcium would not form a white precipitate, with both aluminium and zinc causing a white precipitate to form. As such, the usage of these 2 tests would prove that the ion present in the water is calcium.
+			\subsubsection{Source E:}
+								
+			\textbf{Source of anion:}
+
+				To determine what the predominant anion would be, the material used to make the roofing of the 120 year old villa must be considered. Taking into consideration that the villa is about 120 years old, the likely material used to make the roofing would be teracotta or concrete. If hte villa were to be constructed in a modern area, the likely material used would have been concrete. 
+				
+				Concrete is usually composed of ``'': tricalcium silicate (3CaO · SiO2), dicalcium silicate (2CaO · SiO2), tricalcium aluminate (3CaO · Al2O3), and a tetra-calcium aluminoferrite (4CaO · Al2O3Fe2O3)"(Encyclopedia Britannica). Seeing that the major cation present throughout these substances is calcium, the cation to be investigated will be calcium.
+
+				The cation would dissociate and dissolve in water via erosion, as rainwater hits the roof and slowly dissolve calcium cations.
+
+					As the predicted ion to be in highest concentrations is calcium, same as the previous section the procedure and chemical equations observed would be the exact same, hence the same procedure and explanation is shown below.
+					\begin{enumerate}
+						\item Measure 3 mL of the roof water solution
+						\item Add the contents of the measuring cylinder to a test tube
+						\item Place the test tube in a test tube rack
+						\item Add 2 drops of the sodium hydroxide solution
+							\begin{enumerate}
+								\item Here a white precipitate should be observed
+							\end{enumerate}
+						\item Add sodium hydroxide solution in excess
+							\begin{enumerate}
+								\item The white precipitate should still be visible regardless of the amount of sodium hydroxide added in excess
+							\end{enumerate}
+						\item Repeat steps 1 to 3, ensuring to use a different test tube and to flush the measuring cylinder 3 times with distilled water if being reused
+						\item Add 10 drops of aqueous ammonia solution to the test tube
+						\begin{enumerate}
+							\item Little to absolutely no precipitate should be observed and the solution should remain clear
+						\end{enumerate}
+					\end{enumerate}
+				
+				\noindent \textbf{Chemical observations:}
+	
+					At step 4, the addition of sodium hydroxide to the solution creates a white precipitate. The chemical equation for this reaction is as follows:
+	
+					\begin{equation}
+						\ce{CaCO_3{(aq)} + 2NaOH(aq) -> Na_2CO_3(aq) + Ca(OH)_2(s)}
+					\end{equation}
+					
+					The addition of sodium hydroxide to aqueous calcium carbonate causes a redox or double displacement reaction to take place, where the products of the reaction are Calcium hydroxide and Sodium carbonate. The main precipitate and the focus of this investigation will be calcium hydroxide. Calcium hydroxide is only slightly soluble in water, hence it precipitates out of solution. Calcium hydroxide holds a white colour, hence as it precipitates out as a solid, it gives the test tube a white colour. Calcium hydroxide is also known as Slaked Lime
+	
+					The further addition of sodium hydroxide in excess in step 5, ensures that all remaining calcium carbonate molecules, which have now dissociated into their constituent ions, have reacted completely. However, as the precipitate produced is still calcium hydroxide, which is only slightly soluble, the solution still has a white colour, given to it by the colour of calcium hydroxide - white.
+	
+					In step 7, the addition of 10 mL of aqueous ammonia presents the following chemical reaction:
+	
+					\begin{equation}
+						\ce{NH_4OH{(aq)} + CaCO_3(aq) -> NH_4OH{(aq)} + CaCO_3(aq)}
+					\end{equation}
+	
+					As shown above, no observable precipitate is formed, but it must be observed that during this step, a light white colour may be observed attributable to the formation of some calcium hydroxide molecules. However, a majority of the molecules do not react. As such, it can be said that no chemical reaction takes place, hence the above equation for the addition of aqueous ammonia to the solution. It should be noted that the above reaction only accounts for the majority of the solution.
+
+					These 2 specific tests must be performed to narrow down the ion, as calcium, zinc and aluminium all form white precipitates when sodium hydroxide is added. When sodium hydroxide is added in excess, the presence of either zinc or calcium would cause the solution to have a white colour too, with only the presence of aluminium causing the solution to slowly turn colourless as more sodium hydroxide solution is added in excess. Hence, to confirm that the ion present is calcium, tests with aqueous ammonia must be performed. When aqueous ammonia is added, only calcium would not form a white precipitate, with both aluminium and zinc causing a white precipitate to form. As such, the usage of these 2 tests would prove that the ion present in the water is calcium.
+
+			
+			
+
+	\section{Section B:}
+		Hard water, is water that contains a high mineral concentration, primarily calcium and magnesium. These ions are usually found in various forms, including ``bicarbonates, chlorides, and sulfates"(Encyclopedia Britannica). Hard water is formed through the percolation of water through sedimentary rock layers. As explained in the background information section, the movement of water through sedimentary rock layers when escaping through unconfined aquifers causes the dissolution of minerals present in the sedimentary rock layers into the water as it moves up towards the surface. Water hardness is measured using the multivalent (having a charge of more than 1) cations present in the solution and is generally attributed to such cations.
+		\subsection{Dissolution of magnesium ions in water:}
+
+			Magnesium ions usually dissolve into springs as water moves from underground aquifers to the surface move through sedimentary layers containing dolomite, such as dolostone, explained in the background information section. By various methods of weathering, these minerals would dissolve into the water. Methods of weathering are explained in the background information section.
+		
+		\subsection{Effect of hard water on humans when consumed:}
+			
+			There are some claims that consumption of hard water may assist those with cardiovascular diseases. ``In most large-scale studies, an inverse relationship between the hardness of drinking-water and cardiovascular disease has been reported''(Sengupta). However, some other studies have not witnessed the same results, hence the validity of these claims cannot be approved.
+
+			Hard water can also help individuals reach their daily mineral requirements, due to the high concentrations of minerals needed by the body in hard water.
+
+			However, a major negative side effect of hard water is the possible effects on raising blood pressure. This can be especially bad for those suffering from high blood pressure, as the sodium present in hard water in higher quantities than in soft water can have significant negative effects on the human body.
+
+			Overall however, consumption of hard water is considered very safe. However, the usage of hard water in terms of other household uses, such as showering or cleaning clothes may prove to be negative. Soft water is better for the human hair and is easier on clothing when being clothing, while hard water can stain clothing. For the average individual, the mere consumption of hard water would be beneficial, however, usage of hard water for other tasks would not be advised.
+
+		\subsection{Effect of hard water on the environment:}
+			
+			Hard water has numerous positive effects on the environment. Hard water is important in pH regulation of water bodies. The minerals in hard water help combat the acidity of rain in water bodies, attributable to the basic nature of ions such as calcium. Harder water also tends to have less toxic compounds and is beneficial for aquatic life. 
+
+			However hard water can have some negative effects on the environment. For example, the evaporation of hard water leaves behind limescale deposits. 
+			
+			Overall however, the general nature of hard water is positive. It's effects on the environment are limited, unlike its effects on the human body.
+			\newpage
+	\section{Bibliography}
+	
+		
+
+\end{document}

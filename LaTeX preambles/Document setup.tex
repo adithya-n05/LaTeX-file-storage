@@ -1,0 +1,67 @@
+% Document setup
+\documentclass[12pt, a4paper, twosided]{article}
+\usepackage[a4paper, top=1in, bottom=1in, left=1in, right=1in]{geometry} %%Margins
+
+%Tables
+\usepackage{multirow}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{tablefootnote}
+\usepackage{makecell}
+\usepackage{booktabs}
+
+%Graphics
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{callouts}
+\usetikzlibrary{intersections}
+\pgfplotsset{scaled x ticks=false}
+
+%Figure management
+\usepackage{wrapfig}
+\usepackage[export]{adjustbox}
+\usepackage{float} %%For the [H] option
+\restylefloat{table} %%For the [H] option
+
+%%Caption management
+\usepackage[justification=centering]{caption}
+\usepackage{subcaption}
+\captionsetup[figure]{font=footnotesize}
+\captionsetup[table]{font=footnotesize, singlelinecheck=off} 
+
+%Hyperlink management
+\usepackage{color} 
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linktoc=all,
+  linkcolor=black,
+  citecolor=black,
+}
+
+%Miscellaneous
+\usepackage[final]{microtype}
+\edef\svtheparindent{\the\parindent}
+\usepackage{parskip}
+\usepackage{setspace} %% For setting spacing between
+\usepackage{filecontents} %%To create files and save them and to import them
+\usepackage[normalem]{ulem} %%Underlining
+\useunder{\uline}{\ul}{} %%Underlining
+\usepackage{fancyhdr} %%Nicer headers
+\pagestyle{fancy} %%Nicer headers
+\usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb} %%Math stuff
+\usepackage{textcomp} %%Not sure what this is for
+\usepackage{ragged2e} %%For non-justified text
+\usepackage{gensymb} %%Symbols such as celsius
+\usepackage{titlesec} %%Section formatting
+\usepackage{enumitem} %%Enumerate and itemize
+\usepackage{color} %%Highlighting
+\usepackage{titling} %%Subtitle to main title of document with extra option below
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+}

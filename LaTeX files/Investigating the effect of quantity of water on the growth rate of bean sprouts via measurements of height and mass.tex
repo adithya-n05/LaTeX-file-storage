@@ -1,0 +1,591 @@
+\documentclass[11pt, a4]{article}
+\usepackage[a4paper, top=1in, bottom=1in, left=1in, right=1in]{geometry}
+\usepackage{color} 
+\usepackage[pdftex]{hyperref}
+\hypersetup{
+	colorlinks=true, 
+	linktoc=all, 
+	linkcolor=black, 
+	citecolor=.
+}
+\usepackage[export]{adjustbox}
+\usepackage{float}
+\restylefloat{table}
+\usepackage{array}
+\usepackage[final]{microtype}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{multirow}
+\usepackage{callouts}
+\usepackage[version=4]{mhchem}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage[justification=centering]{caption} 
+\usepackage{titlesec}
+\usepackage[utf8]{inputenc}
+\usepackage{callouts}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage[justification=centering]{caption} 
+\usetikzlibrary{intersections}
+\usepackage{fontawesome}
+\usepackage{capt-of}
+\usepackage{setspace}
+\usepackage{tablefootnote}
+\usepackage{subcaption}
+\usepackage{caption}
+\captionsetup[figure]{font=footnotesize}
+\captionsetup[table]{font=footnotesize}
+\usepackage{wrapfig}
+\usepackage{scrextend}
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ul}{}
+\deffootnote{0em}{1.6em}{\thefootnotemark.\enskip}
+
+\title{\vspace{90mm}Investigating the effect of quantity of water on the growth rate of bean sprouts via measurements of height and mass}
+\author{Adithya Narayanan}
+\date{30 April, 2020}
+
+\begin{document}
+	\begin{titlepage}
+		\maketitle
+		\thispagestyle{empty}
+	\end{titlepage}
+	\tableofcontents
+	\thispagestyle{empty}
+	\newpage
+	\clearpage
+	\setcounter{page}{1}
+	\section{Research Question:}
+	To investigate the relationship between the quantity of water added to bean seeds and the height and mass reached by the bean sprouts in a time period of 50 days (as a quantitative measure for growth rate) which will be achieved by adding increasing quantities of water given to the plant each day (in increments of 10 mL) and measuring the height and mass of the bean sprout at the end of 50 days (in cm and g respectively) with repetitions for 6 different quantities of water (0, 10, 20, 30 and 40 and 50 mL), with 5 trials for each quantity. The data collected will help show the effect that varying quantities of water have on the growth rate of bean sprouts, which can be observed through the height and mass of the bean sprouts at the end of 50 days. The entire experiment will be performed on the ``Growing plants" simulator on the website ``Gizmos".
+	\section{Background information:}
+		Water is debatably the most important abiotic substance that affects plant growth and photosynthesis. As a key component of photosynthesis, water plays a key role in determining the growth rate of a plant. As a key carrier substance for nutrients and other substances essential to plant growth, water is absorbed via a passive process referred to as osmosis; the movement of water from an area of higher water concentration (higher water potential), i.e the soil, to areas of lower water concentrations (lower water potential), following a concentration gradient. Evaporation of water through the opening of stoma in leaves creates said constant concentration gradient, with this process being referred to as transpiration. Water also plays a key role for translocation, due to its uses as a key carrier of nutrients, where water assists in moving nutrients from certain parts of a plant to other parts. Water also remains important for maintaining cell turgidity in plant cells and allowing for the movement of air in and out of leaves by causing guard cells to become turgid and vice versa. For this report, the effects of water on the growth rate of a bean plant will be investigated.
+
+
+		\subsection{Theory:}
+			There are optimal levels of water to be given to a plant and is dependent on numerous factors. This can include type of plant, location based adaptations, stage of growth etc. Thereby, the results of this experiment would only be representative of bean plants and the particular conditions of growth described in the variables section.
+			
+			Increasing the quantity of water given to a plant at the beginning stages would result in a higher water potential in the soil surrounding the roots. Hence a greater concentration gradient would result in greater uptake of water by the plant, thereby assisting in speeding up reactions such as photosynthesis as an increase in water and nutrients available assist in increasing use of spare photosynthesis ``capacity". This would result in an increase in the growth rate of the plant due to more energy being available for growth, a result of increased photosynthesis. 
+			
+			However, continuing to increase water quantities would cause other factors start to start become limiting resulting in consecutive decreasing increments in growth rate. Further increases in quantities of water available to a plant would cause the roots of said plant to rot. This can be explained by the nature of root hair cells. Cells that absorb water, i.e root hair cells, like any other cell in a plant, require oxygen, for processes such as respiration. Hence further increases in the quantity of water available to a plant would result in root hair cells struggling to access the oxygen needed, due to the bipolar nature of water, which creates difficulty in dissolving oxygen. Hence, overwatering can displace oxygen from gaps in the soil, due to the difficulty involved with the dissolution of oxygen in water. This would eventually lead to root hair cell death, as cells struggle to access oxygen and the roots of the plant begin to rot. Due to this, quantities of water absorbed would initially level off, following which, they would proceed to decrease dramatically. 
+			
+		\subsection{Predicted graphical outcome:}
+		Due to the differences between each bean plant, and the nature of plant growth, determining the exact quantities of water needed by a plant is not possible, however the general trend can be easily described, as in the previous section. The following are predicted \textbf{trendline} graphs on a bar plot background, for the output of this experiment, that is informed by the above research.
+		\vspace{-4mm}
+		\begin{figure}[hbt!]
+			\pgfplotsset{width=9.6cm, compat=1.8, 
+				node near coord/.style args={#1/#2/#3}{
+					nodes near coords*={
+						\ifnum\coordindex=#1 #2\fi
+					}, 
+					scatter/@pre marker code/.append code={
+						\ifnum\coordindex=#1 \pgfplotsset{every node near coord/.append style=#3}\fi
+					}
+				}, 
+				nodes near some coords/.style={ 
+					scatter/@pre marker code/.code={}, 
+					scatter/@post marker code/.code={}, 
+					node near coord/.list={#1}
+				}
+			}
+			\pgfplotstableread{
+					0 0
+					10 20
+					20 40
+					30 60
+					40 60
+					50 40
+				}\datatable
+				
+				\pgfplotstableread{
+					0 0
+					10 20
+					20 40
+					30 60
+					40 60
+					50 40
+				}\datatablefull
+				
+				\begin{tikzpicture}
+				\begin{axis}[
+				title=\textbf{Predicted average height of bean sprout after 50 days (cm) for varying quantities of water increasing in increments of 10 mL}, 
+				title style={align=center, text width = 16cm}, 
+				ybar, 
+				ylabel={\ \footnotesize Average height of bean sprout after 50 days (cm)}, 
+				xlabel={\ \footnotesize Quantity of water added to pot every day (mL)}, 
+				ymin=0, 
+				ymax=70, 
+				legend style={at={(0.5, -0.145)}, 
+					anchor=north, legend columns=-1}, 
+				xtick={0, 10, 20, 30, 40, 50},
+				minor xtick={5, 15, 25, 35, 45}, 
+				ytick={0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 68}, 
+				minor ytick={0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70}, 
+				yticklabels={, , }, 
+				xticklabels={, , }, 
+				yminorgrids=true, 
+				ymajorgrids=true, 
+				xminorgrids=true
+				]
+				\addplot [dotted, ultra thick, black, line join=round, smooth] table[header=false] {\datatable};
+				\addlegendentry{Predicted average height of bean sprout after 50 days}
+				\addlegendentry{Trendline}
+				\end{axis}
+			\end{tikzpicture} 
+			\caption{
+				Narayanan, Adithya. “Predicted Average Height of Bean Sprout after 50 Days (cm) for Varying Quantities of Water Increasing in Increments of 10 ML.” \textit{Gardening Know How}, www.gardeningknowhow.com/special/children/how-does-water-affect-plant-growth.htm.
+				}
+		\end{figure}
+		\vspace{-7mm}
+		\begin{figure}[H]
+			\pgfplotsset{width=9.3cm, compat=1.8, 
+				node near coord/.style args={#1/#2/#3}{
+					nodes near coords*={
+						\ifnum\coordindex=#1 #2\f
+					}, 
+					scatter/@pre marker code/.append code={
+						\ifnum\coordindex=#1 \pgfplotsset{every node near coord/.append style=#3}\fi
+					}
+				}, 
+				nodes near some coords/.style={ 
+					scatter/@pre marker code/.code={}, 
+					scatter/@post marker code/.code={}, 
+					node near coord/.list={#1}
+				}
+			}
+			\pgfplotstableread{
+					0 0
+					10 20
+					20 40
+					30 60
+					40 60
+					50 40
+				}\datatable
+				
+				\pgfplotstableread{
+					0 0
+					10 20
+					20 40
+					30 60
+					40 60
+					50 40
+				}\datatablefull
+				
+				\begin{tikzpicture}
+				\begin{axis}[
+				title=\textbf{Predicted average mass of bean sprout after 50 days (g) for varying quantities of water increasing in increments of 10 mL}, 
+				title style={align=center, text width = 16cm}, 
+				ybar, 
+				ylabel={\ \footnotesize Average mass of bean sprout after 50 days (g)}, 
+				xlabel={\ \footnotesize Quantity of water added to pot every day (mL)}, 
+				ymin=0, 
+				ymax=70, 
+				legend style={at={(0.5, -0.145)}, 
+					anchor=north, legend columns=-1}, 
+				xtick={0, 10, 20, 30, 40, 50}, 
+				minor xtick={5, 15, 25, 35, 45}, 
+				ytick={0, 10, 20, 30, 40, 50, 60, 70}, 
+				yticklabels={, , }, 
+				xticklabels={, , }, 
+				yminorgrids=true, 
+				ymajorgrids=true, 
+				xminorgrids=true
+				]
+				\addplot [dotted, ultra thick, black, line join=round, smooth] table[header=false] {\datatable};
+				\addlegendentry{Predicted average mass of bean sprout after 50 days}
+				\addlegendentry{Trendline}
+				\end{axis}
+			\end{tikzpicture} 
+			\caption{
+				Narayanan, Adithya. “Predicted Average Mass of Bean Sprout after 50 Days (g) for Varying Quantities of Water Increasing in Increments of 10 ML.” \textit{Gardening Know How}, www.gardeningknowhow.com/special/children/how-does-water-affect-plant-growth.htm.
+				}
+		\end{figure}
+
+		Please note, this plot is meant to represent the general shape of the trendline when on a bar plot. Bar plots were not included as it is not possible to tell exactly where each water quantity would be placed on a trendline. The experiment may only show part of this trendline or the entire trendline, hence it is difficult to place respective bars on matching parts of the trendline as a prediction cannot be made for corresponding values due to reasons mentioned in the theory section.
+
+		As it can be observed, I predict, based off of my research that, as the quantity of water added increase at the initial stages, the increase in the average height of the plant is significant. At a certain point, as other factors start to become limiting, the trendline begins to level off for both the mass and the height of the bean plant. Following this section, the average mass and height of the plant begins to decrease as the roots of the bean sprout begin to rot due to lack of access to oxygen.
+		
+		\bigbreak
+		
+		The general trend for the mass and the height of the plant is the same as they correspond and are linked to each other.
+	\section{Hypothesis:}
+		Based off of my research above, I hypothesis that, initially, as the quantity of water added to the pot increases, the average height and mass of the plant will increase proportionately, following a linear regression trendline, as the growth rate of the bean sprout increases. Following this, when the quantity of water continues to increase, other limiting factors cause smaller increments in mass and height, hence the increase in growth rate begins to slow down and level off. As the quantity of water added to each pot continues to increase, the average height and mass of the bean sprouts begin to decrease signalling a decrease in the growth rate of the bean sprouts.
+
+		\bigbreak
+
+		When viewed in a graph (as shown above), I believe that the hypothesised results could be broken down into 3 sections. In the first section, the trendline is proportional as the quantity of water given each day increases. The gradient for this section should be positive and the gradient should stay the same until limiting factors are encountered. The reasoning behind this prediction is as follows. At lower quantities of water given to the bean sprouts, excess ``spare capacity", in terms of the plants ability ot photosynthesis is used up and the height and mass of the plant increase significantly. In the next section however, as other factors of photosynthesis become limiting, such as light and temperature, the rate of increase in the growth rate slows down. In the final section, approaching even higher quantities of water would result in rotting of the roots, as root hair cells struggle to absorb required amounts of oxygen. 
+
+		\bigbreak
+
+		The shape of my graph would be similar to a bell curve and if the range of data collected is not sufficient, should represent at least a section of it. I also expect mass values to be significantly lower than height, as although proportional, larger increases in height would only result in smaller increases in mass.
+
+	\section{Methodology:}
+		\subsection{Independent variable:}
+		The quantity of water added to each trial per data set collected, per day. We will be performing a total of 30 germinations with 6 different volumes of water of 0, 10, 20, 30, 40 and 50 mL for a total of 6 datasets, each with 5 trials. This will be achieved by adding increments of 10 mL of water to each of the 5 germinations used in each dataset. Each dataset of 5 trials corresponds with each of the 6, 10 mL increments.
+		\subsection{Dependent variable:}
+			The height of the shoot of the bean sprout and mass of each of the germinated bean sprouts, measured in centimeters and grams respectively, at the end of 50 days, following 50 additions of the dataset respective quantities of water, each per day. This is a quantitative measure for the growth rate of the bean sprouts. This will be measured  by placing a ruler perpendicular to the pot and measuring the value at the base of the pot and the value at the top of the germinated bean sprout. The difference between values at the top and the bottom of the ruler will then be taken to be the height of the shoot of the bean sprout. The mass of the bean sprout will be measured, based on basic presumptions of the simulator, would be calculated by removing the bean sprout from the pot with roots intact, cleansing and patting dry the bean sprout and measuring the mass of the bean sprout using an electronic scale to an accuracy of 1 decimal place. This was chosen as the measure over other methods, such as measuring the mass of the entire pot, as it was the only method available with the usage of an online simulator.
+		\subsection{Controlled variables:}
+			\begin{longtable}{|>{\centering\arraybackslash}m{4.5cm}|>{\centering\arraybackslash}m{10.5cm}|}
+				\hline
+				\textbf{Variable controlled:} & \textbf{How and why it will be controlled:}\\
+				\hline
+				\hline
+				Type of plant and type of bean seed used & This variable will be controlled as, changing the plant can completely change the results of the experiment as different plants grow at different speeds. Using the same bean seed ensures that the type of bean plant does not affect the growth rate of the plant. This will be kept constant by only using the single type of bean seed available on Gizmos.\\
+				\hline
+				Concentration of Carbon Dioxide in the controlled room in which the experiment is conducted & This variable will be controlled as, changing the concentration of carbon dioxide in the atmosphere with each trial, would change the rate of photosynthesis, which would affect the growth rate of the plant, hence affecting the height and mass of the plant at the end of the 50 days. This will be kept at a constant value of 0.035\%.\\
+				\hline
+				Amount of nutrients present in the soil & Changing this variable with each trial, would directly affect the growth rate of the plant, hence affecting the height and mass of the plant at the end of the 50 days. Hence it will be kept constant by adding 1 set of compost and 1 set of fertilizer to each pot for each trial, in the simulator\\
+				\hline
+				Time duration of each trial & This will need to be kept constant as changing the time for which each trial runs will affect the height and mass of the plant as the plant will continue to grow. Hence, the reaction will run for only 50 days for each trial.\\
+				\hline
+				Temperature of the environment in which the experiment takes place & Changing the temperature with each trial, would change the rate of photosynthesis, which would affect the growth rate of the plant, hence affecting the height and mass of the plant at the end of the 50 days. This will be kept constant at around 24$^{o}$C.\\
+				\hline
+				Light intensity of the light that the plants are exposed to & This variable will be controlled as changing the light intensity also has the same effect as changing the carbon dioxide temperatures that the plant is exposed to, that is it would change the rate of photosynthesis, which would affect the growth rate of the plant, hence affecting the height and mass of the plant at the end of the 50 days. This will be kept constant by shining only 3 tungsten bulbs on each plant throughout the course of the experiment.\\
+				\hline
+				Source of light & Changing the source of light may change the wavelengths of light that the plant is exposed to, which can affect the rate of photosynthesis, as plants prefer certain wavelengths over others and only use the energy from specific wavelengths for photosynthesis. This will be controlled by only utilising 3 tungsten bulbs as the source for light throughout the experiment.\\
+				\hline
+				pH of soil and water & Changing the pH of the soil and the water given to the plant affects the availability of nutrient to the plant. As most nutrients are available in the 5.5 to the 7.0 range, the pH will be kept within this range for the duration of this experiment with the use of a soil pH meter and universal indicator to check the pH of the water given to the plant\\
+				\hline
+				Source of water & The source of water affects the nutrients present in the water given to the plan, which can in turn affect the growth rate of the plant, hence keeping it constant ensures that the nutrients given to the plant are solely affected by the compost and fertilizer added.\\
+					\hline
+			\end{longtable}
+		\subsection{Procedure:}
+		The procedure below allows for sufficient relevant data to be gathered, as over 30 trials of data over a wide range of water quantities are collectable via the use of this procedure.
+		\begin{enumerate}
+			\item Launch the Gizmos plant simulator website by accessing this url using a web browser - https://www.explorelearning.com/index.cfm?method=cResource.dspView\&resourceID=615.
+			
+			\item Sign in using an existing account or create an account using an email address.
+			
+			\item Ensure the tab "Experiment" is selected.
+			
+			\item Drag and drop 1 bean seed from the supplies section, into each of the 3 pots.
+			
+			\item Repeat step 4 with compost and fertilizer.
+			
+			\item Adjust the daily water reading tab until a reading of 0 mL is shown for each pot, by dragging the tab down.
+			
+			\item Press the play button to begin the simulation.
+			
+			\item Record the mass and height readings for each of the pots at the end of 50 days.
+			
+			\item Select the reset switch to reset all pots to their original state.
+			
+			\item Repeat steps 3 to 8 for a total of 5 trials.
+			
+			\item Repeat steps 3 to 9 for each of the quantities of water in an ascending order of increasing increments of 10 mL, starting with 10 mL for a total of 6 datasets, each corresponding to water quantities of 0, 10, 20, 30, 40, and 50 mL.
+		\end{enumerate}
+		\newpage
+	\section{Results:}
+		\subsection{Data table:}
+			\textbf{Table 1 shows raw data and average for various heights of bean sprouts calculated from various trials at the end of 50 days:}
+				\begin{center}
+					\textit{``*" Indicates an evident trial anomaly not included in the average calculation}
+				\end{center}
+				\begin{table}[H]
+					\begin{minipage}{\textwidth}
+						\begin{adjustbox}{width= \textwidth, center=\textwidth}
+							\centering
+							\begin{tabular}{|>{\centering\arraybackslash}p{3.5cm}|>{\centering\arraybackslash}p{2.5cm}|>{\centering\arraybackslash}p{2.5cm}|>{\centering\arraybackslash}p{2.5cm}|>{\centering\arraybackslash}p{2.5cm}|>{\centering\arraybackslash}p{2.5cm}|>{\centering\arraybackslash}p{2.5cm}|}
+								\hline
+								\multicolumn{1}{|c|}{\multirow{2}{3.5cm}{\textbf{\footnotesize Volume of water added each day (mL)}}} & \multicolumn{6}{c|}{\textbf{Height of bean sprout at the end of 50 days (cm, 1 d.p)}}\\
+								\cline{2-7}
+								& Trial 1 & Trial 2 & Trial 3 & Trial 4 & Trial 5 & Average\\
+								\hline
+								0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0\\
+								\hline
+								10 & 22.8 & 22.8 & 23.3 & 22.2 & 22.4 & 22.7\\
+								\hline
+								20 & 37.0 & 37.6 & 36.2 & 36.4 & 38.4 & 37.1\\
+								\hline
+								30 & 46.0 & 44.8 & 46.9 & 44.5 & 46.0 & 45.6\\
+								\hline
+								40 & 51.7 & 54.8 & 54.0 & 51.1 & 53.3 & 53.0\\
+								\hline
+								50 & 51.6 & 52.1 & 51.9 & 51.2 & 50.9 & 51.5\\
+								\hline
+							\end{tabular}
+						\end{adjustbox}
+					\end{minipage}
+				\end{table}
+			\textbf{Table 1 shows raw data and average for mass of bean sprouts calculated from various trials at the end of 50 days:}
+				\begin{table}[H]
+					\begin{minipage}{\textwidth}
+						\begin{adjustbox}{width= \textwidth, center=\textwidth}
+							\centering
+							\begin{tabular}{|>{\centering\arraybackslash}p{3.5cm}|>{\centering\arraybackslash}p{2.5cm}|>{\centering\arraybackslash}p{2.5cm}|>{\centering\arraybackslash}p{2.5cm}|>{\centering\arraybackslash}p{2.5cm}|>{\centering\arraybackslash}p{2.5cm}|>{\centering\arraybackslash}p{2.5cm}|}
+								\hline
+								\multicolumn{1}{|c|}{\multirow{2}{3.5cm}{\textbf{\footnotesize Volume of water added each day (mL)}}} & \multicolumn{6}{c|}{\textbf{Mass of bean sprout at the end of 50 days (g, 1 d.p)}}\\
+								\cline{2-7}
+								& Trial 1 & Trial 2 & Trial 3 & Trial 4 & Trial 5 & Average\\
+								\hline
+								0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0\\
+								\hline
+								10 & 1.7 & 1.7 & 1.8 & 1.7 & 1.7 & 1.7\\
+								\hline
+								20 & 3.4 & 3.4 & 3.3 & 3.3 & 3.5 & 3.4\\
+								\hline
+								30 & 5.2 & 5.1 & 5.3 & 5.1 & 5.1 & 5.2\\
+								\hline
+								40 & 6.0 & 6.4 & 6.3 & 5.9 & 6.2 & 6.2\\
+								\hline
+								50 & 6.9 & 6.9 & 6.9 & 6.8 & 6.8 & 6.9\\
+								\hline
+							\end{tabular}
+						\end{adjustbox}
+					\end{minipage}
+				\end{table}
+		\subsection{Sample calculations:}
+			\textbf{Sample calculation for average for dataset of 40 mL for height:}
+			\begin{equation}
+				\frac{51.7 \ cm + 54.8 \ cm + 54.0 \ cm + 51.1 \ cm + 53.3 \ cm}{5 \ trials}=53.0 \ cm \ (Rounded \ to \ 1 \ d.p.)
+			\end{equation}
+			\textbf{Sample calculation for average for dataset of 40 mL for mass:}
+			\begin{equation}
+				\frac{6.0 \ g + 6.4 \ g + 6.3 \ g + 5.9 \ g + 6.2 \ g}{5 \ trials}=6.2 \ g \ (Rounded \ to \ 1 \ d.p.)
+			\end{equation}
+		\subsection{Graphs:}
+		\vspace{-3mm}
+			\begin{center}
+				\pgfplotsset{width=11.5cm, 
+					node near coord/.style args={#1/#2/#3}{% Style for activating the label for a single coordinate
+						nodes near coords*={
+							\ifnum\coordindex=#1 #2\fi
+						}, 
+						scatter/@pre marker code/.append code={
+							\ifnum\coordindex=#1 \pgfplotsset{every node near coord/.append style=#3}\fi
+						}
+					}, 
+					nodes near some coords/.style={ % Style for activating the label for a list of coordinates
+						scatter/@pre marker code/.code={}, % Reset the default scatter style, so we don't get coloured markers
+						scatter/@post marker code/.code={}, % 
+						node near coord/.list={#1} % Run "node near coord" once for every element in the list
+					}
+				}
+				\pgfplotstableread{
+					0 0
+					10 22.7
+					20 37.1
+					30 46
+					40 51.5
+					50 51.5
+				}\datatable
+				
+				\pgfplotstableread{
+					0 0
+					10 22.7
+					20 37.1
+					30 45.6
+					40 53.0
+					50 51.5
+				}\datatablefull
+				
+				\begin{tikzpicture}
+				\begin{axis}[
+				title=\textbf{Average height of bean sprout after 50 days (cm) for varying quantities of water increasing in increments of 10 mL as an investigation of growth rate}, 
+				title style={align=center, text width = 16cm}, 
+				ybar, 
+				ylabel={\ Average height of bean sprout after 50 days (cm)}, 
+				xlabel={\ Quantity of water added to pot every day (mL)}, 
+				ymin=0, 
+				ymax=56, 
+				legend style={at={(0.5, -0.145)}, 
+					anchor=north, legend columns=-1}, 
+				xtick={0, 10, 20, 30, 40, 50}, 
+				minor xtick={5, 15, 25, 35, 45}, 
+				ytick={0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56}, 
+				minor ytick={0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54}, 
+				yminorgrids=true, 
+				ymajorgrids=true, 
+				xminorgrids=true
+				]
+				\addplot +[nodes near some coords={0/0.0/above, 1/22.7/above, 2/37.1/above, 3/45.6/above, 4/53.0/above, 5/51.5/above}
+				] table {\datatablefull};
+				\addplot [dotted, ultra thick, black, line join=round, smooth] table[header=false] {\datatable};
+				\addlegendentry{Average height of bean sprout after 50 days}
+				\addlegendentry{Trendline}				
+				\end{axis}
+				\end{tikzpicture}
+			\end{center}
+			\begin{center}
+				\pgfplotsset{width=11.5cm, 
+					node near coord/.style args={#1/#2/#3}{% Style for activating the label for a single coordinate
+						nodes near coords*={
+							\ifnum\coordindex=#1 #2\fi
+						}, 
+						scatter/@pre marker code/.append code={
+							\ifnum\coordindex=#1 \pgfplotsset{every node near coord/.append style=#3}\fi
+						}
+					}, 
+					nodes near some coords/.style={ % Style for activating the label for a list of coordinates
+						scatter/@pre marker code/.code={}, % Reset the default scatter style, so we don't get coloured markers
+						scatter/@post marker code/.code={}, % 
+						node near coord/.list={#1} % Run "node near coord" once for every element in the list
+					}
+				}
+				\pgfplotstableread{
+					0 0
+					10 1.7
+					20 3.4
+					30 5.2
+					40 6.2
+					50 6.9
+				}\datatable
+				
+				\pgfplotstableread{
+					0 0
+					10 1.7
+					20 3.4
+					30 5.2
+					40 6.2
+					50 6.9
+				}\datatablefull
+				
+				\begin{tikzpicture}
+				\begin{axis}[
+				title=\textbf{Average mass of bean sprout after 50 days (g) for varying quantities of water increasing in increments of 10 mL as an investigation of growth rate}, 
+				title style={align=center, text width = 16cm}, 
+				ybar, 
+				ylabel={\ Average mass of bean sprout after 50 days (g)}, 
+				xlabel={\ Quantity of water added to pot every day (mL)}, 
+				ymin=0, 
+				ymax=7.5, 
+				legend style={at={(0.5, -0.145)}, 
+					anchor=north, legend columns=-1}, 
+				xtick={0, 10, 20, 30, 40, 50}, 
+				minor xtick={5, 15, 25, 35, 45}, 
+				ytick={0, 1, 2, 3, 4, 5, 6, 7}, 
+				minor ytick={0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0, 5.5, 6.0, 6.5, 7.0, 7.5}, 
+				yminorgrids=true, 
+				ymajorgrids=true, 
+				xminorgrids=true
+				]
+				\addplot +[nodes near some coords={0/0.0/above, 1/1.7/above, 2/3.4/above, 3/5.2/above, 4/6.2/above, 5/6.9/above}
+				] table {\datatablefull};
+				\addplot [dotted, ultra thick, black, line join=round, smooth] table[header=false] {\datatable};
+				\addlegendentry{Average mass of bean sprout after 50 days}
+				\addlegendentry{Trendline}				
+				\end{axis}
+				\end{tikzpicture}
+			\end{center}
+	\section{Analysis:}
+		\subsection{Trend present in data:}
+		The data collected is analysed by dividing it into 2 sections, the section with a relative linear regression trendline (water quantity amounts 10-30 mL) and the following section where the height of the bean sprout levels off (water quantity amounts 40-50 mL). 
+			\subsubsection{Height:}
+				The graph for average height above shows that as the quantity of water given to the pot per day (x-axis) is relatively proportional to the average height of the bean sprout (y-axis) for water quantities of 0-30 mL. This is not exactly proportional, as would be viewed in a linear regression trendline, as there is a slight quadratic curvature to the trendline. The first half of the graph clearly shows that as the quantity of water available to the plant increases, the average height of the plant also increases, signalling an increase in the growth rate of the plant, showing a positive correlation between these 2 variables. For example, as the quantity of water give to the pot increases from 10 mL to 20 mL, the average height of the plant increases from 22.7 cm to 37.1 cm. However, it can be observed that the increments in height are consecutively shorter. For example, the increase in average height when the quantity of water added to the pot everyday increased from 10 mL to 20 mL was 14.4 cm while the increase in height when the quantity of water added to the pot increased from 20 mL to 30 mL was only 8.5 cm, pointing to a gradual increase in the effect of limiting factors on rate of growth. Following is the equation calculated for the graph:
+
+				\begin{equation}
+					y = 18.946ln(x) - 20.004
+				\end{equation}
+
+				It should be noted that the equation was calculated excluding the value for 0 mL as a value of 0 cannot be used for calculations in a logarithmic function. The equation was not included on the graph for the sake of clarity.
+
+				\bigbreak
+
+				For the following section of the graph, from water quantities of 40-50 mL, the average height of the of the bean sprout levels off. The approximate gradient, to 1 significant figure, at any one point in this section of the graph would be 0. This is because further increments in the quantity of water available to the plant does not signal a significant change in the average height of the bean sprouts, thus showing no significant change in the rate of growth.
+
+			\subsubsection{Mass:}
+				The graph for average mass above similar trends to the graph for height. As the quantity of water added to the pot (x-axis) increased, the average mass of the bean sprout also increased (y-axis), by the same proportion for water quantites of 0-30 mL. This section of the graph was directly proportional and had a positive correlation, as this trendline has a value of (0, 0). This signals an increase in the growth rate of the plant. For example, as the quantity of water added to the pot every day increased from 10 mL to 20 mL, the average mass of the bean sprout increased from 1.7 g to 3.4 g. The increments in mass are rather constant and relatively the same, thus contributing to a linear trendline. Following is the equation for the first section of the graph:
+				
+				\begin{equation}
+					y = 0.173x - 0.02	
+				\end{equation}
+				
+				For the following section of the graph, the size of increments in mass decreased as the graph approached the level off point. The section representing 40-50 mL quantities of water also showed a positive correlation. The equation for the second section of the graph is as follows:
+
+				\begin{equation}
+					y = 1.2751x - 1.0059
+				\end{equation}
+
+		\subsection{Scientific reasoning:}
+			It can be interpreted from the graph and data table, that the reasoning for this relation between the independent and dependent variable could be that as the amount of water given to the plant increased, the rate of photosynthesis also increased. The amount of nutrients and minerals absorbed also increased with greater amounts of water carrying greater amounts of nutrients and minerals from the soil to various parts of the plant. In the first section of the graph fom a quantity of water of 0-30 mL, the increase in water available led to an immediate increase in the rate of photosynthesis. This in turn increased thr growth rate of the bean sprout which resulted in an observation of a greater height and mass at the end of the 50 days. 
+
+			\bigbreak
+
+			In the second section of the graphs, it can be observed that the data for height shows a levelling off pattern. Although the main pattern is relatively similar for mass, the same levelling off pattern is not observed, instead the gradient becomes less steep, which is explained in the validity of hypothesis section. The scientific reasoning behind this, would be the introduction of limiting factors, such as carbon dioxide concentrations, , which would have caused a decrease in the increments to an increasing rate of photosynthesis. Hence, although there is an increase in the rate of photosynthesis, it is not as large as previous increments. This would translate to a slower growth rate, which can be measured as smaller observed increments in height and mass, producing said pattern. 
+
+		\subsection{Anomalies:}
+			There were no evident anomalies, which can be atributed to the nature of this investigation, i.e. it was performed using a simulation and not in real life, hence the element of uncontrolled human error is non-existant, thereby the chances of anomalies were significantly reduced, and in this scenario, there were non observed.
+		\subsection{Alignment with hypothesis:}
+		This trendline aligns partially with my hypothesis. To be specific, the trendline establishes 2 of 3 sections I had predicted in my hypothesis, specifically the ones that describe a linear regression trendline followed by a section of levelling off values. The idea that initially, as the quantity of water added per day increases, a corresponding proportional increase in the rate of growth of the bean sprouts, thereby a proportional increase in the height and mass would be observed was proven correct.
+				
+			\bigbreak
+
+		For the second section of the trendline, my hypothesis aligns with the trend presented in the graph for average height vs quantity of water added. As the quantity of water increased past 40 mL, the trendline began levelling off, as I had predicted in my hypothesis and as explained in my hypothesis, this was due to other limiting factors of photosynthesis slowing down the increase in the rate of photosynthesis, resulting in a levelling off pattern. The second section of the trendline in the graph for average mass vs quantity of water added did not line up with my hypothesis and the cause for this is explored in validity of hypothesis.
+
+			\bigbreak
+
+		For the final section of the trendlines predicted in my hypothesis, they were not observed in this investigation. The cause of this is explored in the validity of hypothesis section.
+
+	\section{Evaluation:}
+		\subsection{Validity of hypothesis:}
+			For the first section of my hypothesis I believe my hypothesis has been validated, i.e a positive proportional correlation between the height and mass of the bean plant and the quantity of water added to each of the pots.
+
+			\bigbreak
+			
+			For the second section of the trendline, the exact same trendlines were not observed on both the graphs. The possible cause of this would be the natural randomness of germination, which can result in the slight variations observed in the trendlines, due to natural variations in growth rate and thereby in the height and mass observed. Thus, although the trendlines show an extremely similar pattern, there is an observable and explainable discrepancy, which can be attributed to scientific randomness. However, the trendline for height matches the predicted trendline in this section, thereby it can be used to partially validate section 2 of my hypothesis.
+
+			\bigbreak
+			
+			For the final section of the trendline, the trendlines were not present on either graph or in any data as this section would have likely been out of the range of this experiment. As mentioned in the hypothesis, it would be possible for a section to not be presented in this trendline for the data range that has been collected. To resolve this, a larger range of data would need to be collected to completely prove this hypothesis.
+
+			\bigbreak
+
+			Overall, section 1 and section 2 have been relatively proven and section 3 can be proven or disproven via an extension to this investigation.
+
+		\subsection{Validity and improvements to the method:}
+			\begin{longtable}{|m{3.5cm}|m{6cm}|m{5.7cm}|}
+				
+				\hline
+				
+				\textbf{What went or could have gone wrong?} & \textbf{How did it affect my results?} & \textbf{How can this be improved upon?}\\
+				
+				\hline
+				
+				Section 3 of my hypothesis could not be verified as the method did not provide sufficient data for quantities of water above 50 mL & 
+				This had impacted the data I had collected severely as a pattern could not be established as to whether the trendline levels off or decreases following water quantities of 50 mL. It became difficult to provide the most likely scientific description and would make this the first improvement to make to the investigation. &
+				Extending the investigation to investigate data sets up to 100 mL with 5 trials each would more than likely present the pattern that is needed to prove or disprove section 3 of my hypothesis, and thereby my entire hypothesis. Data with more intermittent differences, especially between water quantities of 40 and 50 mL would prove substantial in creating a better trendline.\\
+				
+				\hline
+				
+				Temperature of the environment that the experiment was conducted in &
+				There were controlled variables that controlled temperature in this experiment, however failure to take into account heat generating objects like the lamps would result in a failure to control the variable. &
+				A simple fix would be to perform the experiment in a temperature controlled environment where possible heat emitting sources are insulated to prevent the transfer of heat, allowing for the temperature to be kept at a constant value.\\
+				
+				\hline
+
+				The method did not specify which type of bean seed was used in the experiment &
+				This was an issue as the simulator did not specify which type of bean seed was used. This would be a cause for concern as different bean seeds require differing amounts of water, hence these results would not be representative of all bean seeds, rather only the unknown ones used in the experiment. &
+				This can be very simply resolved by selecting a specific bean seed prior to the experiment, which can be done by performing the experiment in real life or via the usage of other simulators which allow the type of bean seed to be controlled.\\
+				
+				\hline
+				
+				The method did not consider the type of soil that would be used as no pre-trials were performed &
+				This was a relatively large point that I failed to consider. This results in possible outcomes where the soil is incapable of holding larger amounts of water or the water fails to penetrate to the lower 2/3rds of the pot, where most of the roots are usually located. Failing to select the appropriate type of soil can result in the roots of the plant failing to spread throughout the soil and absorb the maximum amount of water they can. &
+				This can be simply fixed by performing an experimental pre trial testing the independent variable of soil type and observing which soil type yields the best results and is most suited for the specific bean plant. Following this, a specific soil type can be selected and used in the experiment\\
+				
+				\hline
+				
+				
+			\end{longtable}
+		\subsection{Extensions to the investigation:}
+		\begin{longtable}{|>{\centering\arraybackslash}m{5.2cm}|>{\centering\arraybackslash}m{10cm}|}
+			\hline
+			\textbf{What could be added to the benefit of the experiment?} & \textbf{How would this be accomplishes and what would this provide to the experiment?}\\
+			\hline
+			\hline
+			Experimenting with other bean plant seeds and other plants &
+			Experimenting with other bean seeds and other plants would show how water requirements differ between various types of bean seeds and in general plants. This could allow investigations into, for example, how root crop absorb water differently compared to bean crop.\\
+			\hline
+			Experimenting with other factors that affect photosynthesis &
+			We could look at other factors, such as light, temperature, concentration of Carbon dioxide in the atmosphere, etc. This would provide a greater insight into the variety of effects that each factor has on the bean plant. It would also allow us to investigate not only growth rate but quality and the health of the crop. This would allow us to understand the real world relevance of how to manipulate factors that affect photosynthesis for the best possible growing conditions for a specific plant.\\
+			\hline
+			Experimenting with and researching hydrponics&
+			We could look at how hydroponics makes use of only water to provide minerals to a plant. Researching into hydroponics can provide a real world clue of the drastic effects of small changes in the amount of water given to a plant. This would also show how plants change as they are exposed to levels of water that simply could not be demonstrated using soil and a potted plant.\\
+			\hline
+		\end{longtable}
+	\section{Conclusion:}
+		Overall, our results show that from water quantities 0-30 mL, the bean sprout growth rate increases as the water quantities approached 40 mL, which was observed as an increase in the height and mass of the bean sprout. This creates a positive correlation, with a trend line that has a positive gradient. At quantities of water ranging from 40-50mL, there is minimal difference in growth rate as the height and mass of the plant change less drastically, which is especially observable with the height of the bean sprouts. To answer our research question, the optimum water quantities for bean sprouts, within the range of this experiment, falls in the range from 40-50 mL and the growth rate increases, as water quantities of 40 mL are approached. My hypothesis was also validated to a certain extent, with sections 1 and 2 being validated by the trendline observed in this experiment and section 3 awaiting verification via extensions to this experiment to collect data over larger water quantity ranges.
+	\section{Bibliography:}
+\end{document}
