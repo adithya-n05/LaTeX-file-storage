@@ -2,4 +2,4 @@
 
 Storage for all my $$\LaTeX$$ files and preambles.
 
-Find exemplars of reports written in $$\LaTeX$$ and all my preambles above.
+Find exemplars of reports written in $\LaTeX$ and all my preambles above.
